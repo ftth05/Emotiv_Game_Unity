@@ -1,0 +1,4 @@
+sceneSetups:
+- path: Assets/BrainFramework/ExampleScenes/BallExample.unity
+  isLoaded: 1
+  isActive: 1
