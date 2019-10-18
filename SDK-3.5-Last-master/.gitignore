@@ -1,0 +1,9 @@
+doc/html/
+build/
+.idea/
+.gradle/
+*.iml
+*.xml~
+*.out
+*.class
+
