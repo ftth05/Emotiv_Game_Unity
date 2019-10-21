@@ -66,24 +66,24 @@ public class EmotivCtrl : MonoBehaviour {
 	*/
 	void UserAddedEvent(object sender, EmoEngineEventArgs e)
 	{
-		message_box.text = "User Added";
+		message_box.text = "Bundle Pluged"; // from user added to this
 		engineUserID = (int)e.userId;
 	}
 
 	void UserRemovedEvent(object sender, EmoEngineEventArgs e)
 	{
-		message_box.text = "User Removed";	
-	}
+		message_box.text = "Bundle Removed"; // from user Removed to this	
+    }
 
 	void EmotivConnected(object sender, EmoEngineEventArgs e)
 	{
-		message_box.text = "Connected!!";
-	}
+		message_box.text = "Headset Connected!!"; // from Connected to this 
+    }
 
 	void EmotivDisconnected(object sender, EmoEngineEventArgs e)
 	{
-		message_box.text = "Disconnected :(";
-	}
+		message_box.text = "Headset Disconnected :("; // from Connected to this
+    }
 
 	public bool CloudConnected()
 	{
@@ -139,8 +139,8 @@ public class EmotivCtrl : MonoBehaviour {
 				message_box.text = "Load finished";
 			} 
 			else {
-				message_box.text = "Problem loading";
-			}
+				message_box.text = "Problem loading or bundle isn't pluged"; // from Problem loading to this
+            }
 		}
 	}
 
