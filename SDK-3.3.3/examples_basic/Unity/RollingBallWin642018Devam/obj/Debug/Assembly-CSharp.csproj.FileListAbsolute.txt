@@ -239,3 +239,7 @@ C:\Users\fkiran1\Desktop\RollingBallWin642018\obj\Debug\Assembly-CSharp.csproj.C
 C:\Users\fkiran1\Desktop\RollingBallWin642018\obj\Debug\Assembly-CSharp.csproj.CopyComplete
 C:\Users\fkiran1\Desktop\RollingBallWin642018\obj\Debug\Assembly-CSharp.dll
 C:\Users\fkiran1\Desktop\RollingBallWin642018\obj\Debug\Assembly-CSharp.pdb
+C:\Users\fkiran1\Desktop\RollingBallWin642018Devam\obj\Debug\Assembly-CSharp.csprojAssemblyReference.cache
+C:\Users\fkiran1\Desktop\RollingBallWin642018Devam\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache
+C:\Users\fkiran1\Desktop\RollingBallWin642018Devam\obj\Debug\Assembly-CSharp.dll
+C:\Users\fkiran1\Desktop\RollingBallWin642018Devam\obj\Debug\Assembly-CSharp.pdb
