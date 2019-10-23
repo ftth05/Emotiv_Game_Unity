@@ -1,0 +1,7 @@
+K:\GitHub\Emotiv_Game_Unity\SDK-3.3.3\bin\win32\MotionDataLogger.exe
+K:\GitHub\Emotiv_Game_Unity\SDK-3.3.3\bin\win32\MotionDataLogger.pdb
+K:\GitHub\Emotiv_Game_Unity\SDK-3.3.3\examples_basic\C#\MotionDataLogger\obj\x86\Debug\MotionDataLogger.csprojAssemblyReference.cache
+K:\GitHub\Emotiv_Game_Unity\SDK-3.3.3\examples_basic\C#\MotionDataLogger\obj\x86\Debug\MotionDataLogger.csproj.CoreCompileInputs.cache
+K:\GitHub\Emotiv_Game_Unity\SDK-3.3.3\examples_basic\C#\MotionDataLogger\obj\x86\Debug\MotionDataLogger.csproj.CopyComplete
+K:\GitHub\Emotiv_Game_Unity\SDK-3.3.3\examples_basic\C#\MotionDataLogger\obj\x86\Debug\MotionDataLogger.exe
+K:\GitHub\Emotiv_Game_Unity\SDK-3.3.3\examples_basic\C#\MotionDataLogger\obj\x86\Debug\MotionDataLogger.pdb
