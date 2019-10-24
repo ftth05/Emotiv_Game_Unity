@@ -1,0 +1,23 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetEmotivSDK", "DotNetEmotivSDK.csproj", "{DCBDECC2-071E-4FFE-A2AE-5147A0FE08EE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DCBDECC2-071E-4FFE-A2AE-5147A0FE08EE}.Debug|x86.ActiveCfg = Debug|x86
+		{DCBDECC2-071E-4FFE-A2AE-5147A0FE08EE}.Debug|x86.Build.0 = Debug|x86
+		{DCBDECC2-071E-4FFE-A2AE-5147A0FE08EE}.Release|x86.ActiveCfg = Release|x86
+		{DCBDECC2-071E-4FFE-A2AE-5147A0FE08EE}.Release|x86.Build.0 = Release|x86
+		{DCBDECC2-071E-4FFE-A2AE-5147A0FE08EE}.Debug|x64.ActiveCfg = Debug|x64
+		{DCBDECC2-071E-4FFE-A2AE-5147A0FE08EE}.Debug|x64.Build.0 = Debug|x64
+		{DCBDECC2-071E-4FFE-A2AE-5147A0FE08EE}.Release|x64.ActiveCfg = Release|x64
+		{DCBDECC2-071E-4FFE-A2AE-5147A0FE08EE}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+EndGlobal

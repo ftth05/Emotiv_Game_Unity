@@ -1,0 +1,6 @@
+/Users/f3tth/Documents/GitHub/BCI_Emotiv_Game/Emotiv_Game_Unity/SDK-3.5-Last-master/bin/win32/DotNetEmotivSDK.dll
+/Users/f3tth/Documents/GitHub/BCI_Emotiv_Game/Emotiv_Game_Unity/SDK-3.5-Last-master/bin/win32/DotNetEmotivSDK.pdb
+/Users/f3tth/Documents/GitHub/BCI_Emotiv_Game/Emotiv_Game_Unity/SDK-3.5-Last-master/include/C#/obj/x86/Debug/DotNetEmotivSDK.csprojAssemblyReference.cache
+/Users/f3tth/Documents/GitHub/BCI_Emotiv_Game/Emotiv_Game_Unity/SDK-3.5-Last-master/include/C#/obj/x86/Debug/DotNetEmotivSDK.csproj.CoreCompileInputs.cache
+/Users/f3tth/Documents/GitHub/BCI_Emotiv_Game/Emotiv_Game_Unity/SDK-3.5-Last-master/include/C#/obj/x86/Debug/DotNetEmotivSDK.dll
+/Users/f3tth/Documents/GitHub/BCI_Emotiv_Game/Emotiv_Game_Unity/SDK-3.5-Last-master/include/C#/obj/x86/Debug/DotNetEmotivSDK.pdb
