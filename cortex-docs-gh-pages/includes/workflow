@@ -1,0 +1,356 @@
+<h1 id="workflow">Workflow</h1>
+
+<h2 id="how-to-authorize-with-an-emotiv-id">How to authorize with an emotiv id</h2>
+
+<div class="fullwidth">
+
+  <h3 id="step-1">Step 1:</h3>
+
+  <p>Cortex only allow <code>authorize</code> when have a logged in user. To check have any user logged in and that user is the object which you want to work.</p>
+
+  <p>You call <a href="#getuserlogin">get user login</a></p>
+
+  <blockquote>
+    <p>Request</p>
+  </blockquote>
+
+<pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"getUserLogin"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+  <blockquote>
+    <p>Response</p>
+  </blockquote>
+
+<pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"cortextest"</span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+  <p>If return value is not user which you want. Go to step 2, otherwise ignore it.</p>
+
+  <h3 id="step-2">Step 2:</h3>
+
+  <p>Call method <a href="#logout">log out</a> user <code>cortextest</code> and call <a href="#login">log in</a> user account which you want.</p>
+
+  <h3 id="step-3">Step 3:</h3>
+
+  <p>Call method <a href="#authorize">authorize</a></p>
+
+</div>
+
+<h2 id="how-to-get-data-from-cortex">How to get data from Cortex</h2>
+
+<div class="fullwidth">
+
+  <h3 id="step-1-1">Step 1:</h3>
+
+  <p>You need to make sure your headset connected with Cortex by the way call <a href="#queryheadsets">query headset</a></p>
+
+  <blockquote>
+    <p>Request</p>
+  </blockquote>
+
+<pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"queryHeadsets"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+  <blockquote>
+    <p>Response</p>
+  </blockquote>
+
+<pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"connectedBy"</span><span class="p">:</span><span class="s2">"usb cable"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"dongle"</span><span class="p">:</span><span class="s2">"6ff"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"firmware"</span><span class="p">:</span><span class="s2">"625"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="s2">"EPOCPLUS-3B9ADF08"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"label"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sensors"</span><span class="p">:[],</span><span class="w">
+        </span><span class="s2">"settings"</span><span class="p">:{</span><span class="w">
+          </span><span class="s2">"eegRate"</span><span class="p">:</span><span class="mi">256</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"eegRes"</span><span class="p">:</span><span class="mi">16</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"memsRate"</span><span class="p">:</span><span class="mi">32</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"memsRes"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"mode"</span><span class="p">:</span><span class="s2">"EPOCPLUS"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+  <h3 id="step-2-1">Step 2:</h3>
+
+  <p>Call method <a href="#createsession">create session</a> with that headset.</p>
+
+  <h3 id="step-3-1">Step 3:</h3>
+
+  <p><a href="#subscribe">Subscribe</a> <a href="#subscriptions">stream type</a> which you want to get</p>
+
+</div>
+
+<div class="fullwidth">
+
+  <h2 id="how-to-training-with-cortex">How to training with Cortex</h2>
+
+  <p>The workflow of training Mental Command and Facial Expression are same.</p>
+
+  <p>In this case, we try to set up training Mental Command</p>
+
+  <h3 id="step-1-2">Step 1:</h3>
+
+  <p>Call method <a href="#getdetectioninfo">get detection info</a> to know parameter request when setup training.</p>
+
+  <h3 id="step-2-2">Step 2:</h3>
+
+  <p><a href="#createsession">Create sesion</a> with a headset.</p>
+
+  <blockquote>
+    <p>Request</p>
+  </blockquote>
+
+<pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"createSession"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"_auth"</span><span class="p">:</span><span class="s2">"abcd"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"status"</span><span class="p">:</span><span class="s2">"open"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+  <blockquote>
+    <p>Response</p>
+  </blockquote>
+
+<pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"result"</span><span class="p">:{</span><span class="w">
+      </span><span class="s2">"appId"</span><span class="p">:</span><span class="s2">"com.emotiv.emotivpro"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"headset"</span><span class="p">:{</span><span class="w">
+        </span><span class="s2">"connectedBy"</span><span class="p">:</span><span class="s2">"dongle"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"dongle"</span><span class="p">:</span><span class="s2">"6ff"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"firmware"</span><span class="p">:</span><span class="s2">"925"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="s2">"INSIGHT-5A685AE3"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"label"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sensors"</span><span class="p">:[],</span><span class="w">
+        </span><span class="s2">"settings"</span><span class="p">:{</span><span class="w">
+          </span><span class="s2">"eegRate"</span><span class="p">:</span><span class="mi">128</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"eegRes"</span><span class="p">:</span><span class="mi">14</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"memsRate"</span><span class="p">:</span><span class="mi">128</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"memsRes"</span><span class="p">:</span><span class="mi">14</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"mode"</span><span class="p">:</span><span class="s2">"EPOC"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"status"</span><span class="p">:</span><span class="s2">"connected"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="s2">"46d18597-7034-40ab-9d6e-d617a89a24ce"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"license"</span><span class="p">:</span><span class="s2">"9791062b-3fc2-423a-ba34-d62a7a1fe1f0"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"logs"</span><span class="p">:{</span><span class="w">
+        </span><span class="s2">"recordInfos"</span><span class="p">:[]</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"markers"</span><span class="p">:[],</span><span class="w">
+      </span><span class="s2">"owner"</span><span class="p">:</span><span class="s2">"cortextest1"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"profile"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"project"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"recording"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"started"</span><span class="p">:</span><span class="s2">"2017-10-11T09:42:30.159864+07:00"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"status"</span><span class="p">:</span><span class="s2">"opened"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"stopped"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"streams"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"subject"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"tags"</span><span class="p">:[],</span><span class="w">
+      </span><span class="s2">"title"</span><span class="p">:</span><span class="s2">""</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
+
+<div class="fullwidth">
+
+  <h3 id="step-3-2">Step 3:</h3>
+
+  <p><a href="#subscribe">Subscribe</a> <code>sys</code> event on the session that you have created.</p>
+
+  <blockquote>
+    <p>Request</p>
+  </blockquote>
+
+<pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"subscribe"</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"_auth"</span><span class="p">:</span><span class="s2">"abcd"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"streams"</span><span class="p">:[</span><span class="w">
+        </span><span class="s2">"sys"</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+  <blockquote>
+    <p>Response</p>
+  </blockquote>
+
+<pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"result"</span><span class="p">:[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"sid"</span><span class="p">:</span><span class="s2">"46d18597-7034-40ab-9d6e-d617a89a24ce"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sys"</span><span class="p">:{</span><span class="w">
+          </span><span class="s2">"cols"</span><span class="p">:[</span><span class="w">
+            </span><span class="s2">"event"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"msg"</span><span class="w">
+          </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
+
+<div class="fullwidth">
+
+  <h3 id="step-4">Step 4:</h3>
+
+  <p>Setup training <code>neutral</code> action</p>
+
+  <blockquote>
+    <p>Request</p>
+  </blockquote>
+
+<pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"training"</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"_auth"</span><span class="p">:</span><span class="s2">"abcd"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"detection"</span><span class="p">:</span><span class="s2">"mentalCommand"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"session"</span><span class="p">:</span><span class="s2">"46d18597-7034-40ab-9d6e-d617a89a24ce"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"action"</span><span class="p">:</span><span class="s2">"neutral"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"status"</span><span class="p">:</span><span class="s2">"start"</span><span class="w">
+    </span><span class="p">},</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+  <blockquote>
+    <p>Response</p>
+  </blockquote>
+
+<pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="s2">"Set up training successfully for action neutral with status start"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+  <p>After get response, You should able to receive an event from <code>sys</code> stream:</p>
+
+  <blockquote>
+    <p>Receive event training stated</p>
+  </blockquote>
+
+<pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"sid"</span><span class="p">:</span><span class="s2">"46d18597-7034-40ab-9d6e-d617a89a24ce"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"sys"</span><span class="p">:[</span><span class="w">
+      </span><span class="s2">"Mental Command"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"MC_Started"</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
+
+<div class="fullwidth">
+
+  <h3 id="step-5">Step 5:</h3>
+
+  <p>Wait in a few seconds you will get the event training succeeded or failed</p>
+
+  <blockquote>
+    <p>Receive event training succeeded</p>
+  </blockquote>
+
+<pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"sid"</span><span class="p">:</span><span class="s2">"46d18597-7034-40ab-9d6e-d617a89a24ce"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"sys"</span><span class="p">:[</span><span class="w">
+      </span><span class="s2">"Mental Command"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"MC_Succeeded"</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+  <p>If you got event training failed, back to Step 4.</p>
+
+  <p>Call method <a href="#training">training</a> with <code>status</code> accept.</p>
+
+  <blockquote>
+    <p>Request</p>
+  </blockquote>
+
+<pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"training"</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"_auth"</span><span class="p">:</span><span class="s2">"abcd"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"detection"</span><span class="p">:</span><span class="s2">"mentalCommand"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"session"</span><span class="p">:</span><span class="s2">"46d18597-7034-40ab-9d6e-d617a89a24ce"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"action"</span><span class="p">:</span><span class="s2">"neutral"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"status"</span><span class="p">:</span><span class="s2">"accept"</span><span class="w">
+    </span><span class="p">},</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+  <blockquote>
+    <p>Response</p>
+  </blockquote>
+
+<pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="s2">"Set up training successfully for action neutral with status accept"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
+
+<div class="fullwidth">
+
+  <p>After that you will see event training completed.</p>
+
+<pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"sid"</span><span class="p">:</span><span class="s2">"46d18597-7034-40ab-9d6e-d617a89a24ce"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"sys"</span><span class="p">:[</span><span class="w">
+      </span><span class="s2">"Mental Command"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"MC_Completed"</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
+
+<div class="fullwidth">
+
+  <p>Finish training action neutral.</p>
+
+  <p>Continue training “push” with steps same “neutral”.</p>
+
+  <h3 id="step-6">Step 6:</h3>
+
+  <p>Call method <a href="#subscribe">Subscribe</a> stream <code>com</code>.</p>
+
+  <p>You should able to get these events from <a href="#com-event">Mental Comand</a></p>
+
+<pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="s2">"com"</span><span class="p">:[</span><span class="s2">"push"</span><span class="p">,</span><span class="mf">0.673717498779297</span><span class="p">],</span><span class="s2">"sid"</span><span class="p">:</span><span class="s2">"46d18597-7034-40ab-9d6e-d617a89a24ce"</span><span class="p">,</span><span class="s2">"time"</span><span class="p">:</span><span class="mf">245.356536865234</span><span class="p">}</span><span class="w">
+  </span><span class="p">{</span><span class="s2">"com"</span><span class="p">:[</span><span class="s2">"push"</span><span class="p">,</span><span class="mf">0.729008078575134</span><span class="p">],</span><span class="s2">"sid"</span><span class="p">:</span><span class="s2">"46d18597-7034-40ab-9d6e-d617a89a24ce"</span><span class="p">,</span><span class="s2">"time"</span><span class="p">:</span><span class="mf">245.474868774414</span><span class="p">}</span><span class="w">
+  </span><span class="p">{</span><span class="s2">"com"</span><span class="p">:[</span><span class="s2">"push"</span><span class="p">,</span><span class="mf">0.773234784603119</span><span class="p">],</span><span class="s2">"sid"</span><span class="p">:</span><span class="s2">"46d18597-7034-40ab-9d6e-d617a89a24ce"</span><span class="p">,</span><span class="s2">"time"</span><span class="p">:</span><span class="mf">245.601669311523</span><span class="p">}</span><span class="w">
+  </span><span class="p">{</span><span class="s2">"com"</span><span class="p">:[</span><span class="s2">"push"</span><span class="p">,</span><span class="mf">0.814013302326202</span><span class="p">],</span><span class="s2">"sid"</span><span class="p">:</span><span class="s2">"46d18597-7034-40ab-9d6e-d617a89a24ce"</span><span class="p">,</span><span class="s2">"time"</span><span class="p">:</span><span class="mf">245.735366821289</span><span class="p">}</span><span class="w">
+  </span><span class="p">{</span><span class="s2">"com"</span><span class="p">:[</span><span class="s2">"push"</span><span class="p">,</span><span class="mf">0.841019809246063</span><span class="p">],</span><span class="s2">"sid"</span><span class="p">:</span><span class="s2">"46d18597-7034-40ab-9d6e-d617a89a24ce"</span><span class="p">,</span><span class="s2">"time"</span><span class="p">:</span><span class="mf">245.861480712891</span><span class="p">}</span><span class="w">
+  </span><span class="p">{</span><span class="s2">"com"</span><span class="p">:[</span><span class="s2">"push"</span><span class="p">,</span><span class="mf">0.757715404033661</span><span class="p">],</span><span class="s2">"sid"</span><span class="p">:</span><span class="s2">"46d18597-7034-40ab-9d6e-d617a89a24ce"</span><span class="p">,</span><span class="s2">"time"</span><span class="p">:</span><span class="mf">245.995071411133</span><span class="p">}</span><span class="w">
+  </span><span class="p">{</span><span class="s2">"com"</span><span class="p">:[</span><span class="s2">"push"</span><span class="p">,</span><span class="mf">0.342431217432022</span><span class="p">],</span><span class="s2">"sid"</span><span class="p">:</span><span class="s2">"46d18597-7034-40ab-9d6e-d617a89a24ce"</span><span class="p">,</span><span class="s2">"time"</span><span class="p">:</span><span class="mf">246.097534179688</span><span class="p">}</span><span class="w">
+  </span><span class="p">{</span><span class="s2">"com"</span><span class="p">:[</span><span class="s2">"neutral"</span><span class="p">,</span><span class="mf">0.0</span><span class="p">],</span><span class="s2">"sid"</span><span class="p">:</span><span class="s2">"46d18597-7034-40ab-9d6e-d617a89a24ce"</span><span class="p">,</span><span class="s2">"time"</span><span class="p">:</span><span class="mf">246.232025146484</span><span class="p">}</span><span class="w">
+  </span><span class="p">{</span><span class="s2">"com"</span><span class="p">:[</span><span class="s2">"neutral"</span><span class="p">,</span><span class="mf">0.0</span><span class="p">],</span><span class="s2">"sid"</span><span class="p">:</span><span class="s2">"46d18597-7034-40ab-9d6e-d617a89a24ce"</span><span class="p">,</span><span class="s2">"time"</span><span class="p">:</span><span class="mf">246.373306274414</span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>

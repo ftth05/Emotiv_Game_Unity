@@ -1,0 +1,336 @@
+
+<h1 id="concepts">Concepts</h1>
+
+<div class="fullwidth">
+
+  <p>This is a general overview of the concepts in the API.</p>
+
+</div>
+
+<h2 id="protocol">Protocol</h2>
+
+<div class="fullwidth">
+
+  <p>The Cortex protocol is made of 3 building blocks: WebSockets, JSON, and JSON-RPC. WebSockets provide a real-time connection to the underlying Cortex service, designed to be easy to use in both desktop and web-based applications. JSON is a widely supported format used by Cortex to send and receive data, and JSON-RPC is a standard way of using JSON to make requests and get back the results.</p>
+
+  <p>If you’re not familiar with WebSockets or JSON, it may be helpful to read <a href="http://blog.teamtreehouse.com/an-introduction-to-websockets">An Introduction to WebSockets</a> and <a href="https://www.digitalocean.com/community/tutorials/an-introduction-to-json">An Introduction to JSON</a> before going any further.</p>
+
+</div>
+
+<h3 id="websockets">WebSockets</h3>
+
+<div class="fullwidth">
+
+  <p>The Cortex service listens on port 54321. Depending on the WebSocket client you’re using, this means you can connect to it using the url <code>wss://emotivcortex.com:54321</code>.</p>
+
+</div>
+
+<h3 id="json-rpc">JSON-RPC</h3>
+
+<blockquote>
+  <p>Request</p>
+</blockquote>
+
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hello"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"hello"</span><span class="p">:</span><span class="w"> </span><span class="s2">"world"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+  <p>Response (success)</p>
+</blockquote>
+
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hello, world!"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre>
+<blockquote>
+  <p>Response (error)</p>
+</blockquote>
+
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">-9999</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Don't know how to say hello"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>JSON-RPC builds on top of JSON by adding a few standard keys to track requests. An example request and response are shown to the right. The <code>jsonrpc</code> key is always <code>2.0</code>, indicating the protocol version. <code>method</code> indicates which of the <a href="#methods">API Methods</a> you’re trying to call, and <code>params</code> contains the keys and values you want to use for that method. To find the parameters for a given method, you can look it up in the <a href="#methods">Method reference</a>.</p>
+
+<p>You’ll get either a response with a <code>result</code>, or an <code>error</code> if the request was unsuccessful. <code>id</code> is a parameter used to track the association between requests and responses. If you send <code>1</code>, you’ll get <code>1</code> back. If you send <code>"hello"</code>, you’ll get <code>"hello"</code> back.<br />
+Currently, the request in Cortex is synchronous. We are planning change to support asynchronous in next version.</p>
+
+<p>The exception to this is streams of data that you receive from the headset, which do not follow a request-response pattern and do not follow JSON-RPC. They are described below, under <a href="#subscriptions">Subscriptions</a>.</p>
+
+<h2 id="authorization">Authorization</h2>
+
+<div class="fullwidth">
+
+  <p>By default, You can work with Cortex without client id/ secret. But if you want to access Raw EEG data and high-resolution performance metrics, you have to call the <a href="#authorize"><code>authorize</code> method</a> with a client ID and secret. These are specific to your application and used for security and to prevent abuse. You can request a client ID and secret <a href="https://www.emotiv.com/my-account/cortex-apps">on your “my account” page</a>.</p>
+
+</div>
+
+<h3 id="user-accounts-and-licensing">User accounts and licensing</h3>
+
+<div class="fullwidth">
+
+  <p>There are different levels of Cortex access depending on the user’s license. Most features are available for free, however a subscription is required for professional and research features like Raw EEG data and high-resolution performance metrics. For more information, see <a href="https://www.emotiv.com/developer">the licensing page</a>.</p>
+
+  <p>If your application will use these features, you should provide the username and password of the appropriately licensed user when you call the <code>authorize</code> method.</p>
+
+  <p><code>debit</code> parameter is amount of the sessions which user request to work on the local machine. this control how much quota an application is allowed to use.</p>
+
+</div>
+
+<h3 id="auth-token">Auth token</h3>
+
+<div class="fullwidth">
+
+  <p>After authorizing, you will be provided with an authorization token to use in subsequent requests. This token is valid for 48 hours from when it’s issued. You can receive a new token by calling <code>authorize</code> again, or calling <code>generateNewToken</code> using the previous token to refresh it. Details on how to do this are in the <a href="#authorize"><code>authorize</code> method documentation</a>.</p>
+
+</div>
+
+<h2 id="sessions">Sessions</h2>
+
+<div class="fullwidth">
+
+  <p>A session represents a continuous period of data collection from a headset, whether live or prerecorded. To get data from a headset, you start by <a href="#createSession">creating a session</a>, put it into the appropriate state, then <a href="#subscribe">subscribe</a> to receive the results in real time. The data available from the headset is split into various streams, described later in <a href="#subscriptions">Subscriptions</a>.</p>
+
+</div>
+
+<h3 id="session-lifecycle">Session lifecycle</h3>
+
+<div class="fullwidth">
+
+  <p>Every session has a <code>status</code> parameter, indicating its current state. This status can be <code>opened</code>, <code>activated</code>, or <code>closed</code>. New sessions start <code>opened</code> or <code>activated</code> and automatically become <code>closed</code> when the headset is unplugged or turned off (after a 1 minute delay if using the USB dongle).</p>
+
+  <p>When a session is <code>opened</code>, you only can subscribe to get: motion, mental command, facial expression, band power, device data, low-resolution performance metrics.</p>
+
+  <p>When a session is <code>activated</code>, depend on the license. You can subscribe to get Raw EEG or high-resolution performance metrics or both.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>License</th>
+        <th>Raw EEG</th>
+        <th>Performance Metrics</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>advanced</td>
+        <td>Yes</td>
+        <td>low-resolution</td>
+      </tr>
+      <tr>
+        <td>prime</td>
+        <td>Yes</td>
+        <td>high-resolution</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>When a session is <code>closed</code>, no subscriptions are allowed.</p>
+
+  <p>Diagram:</p>
+
+  <p><img src="/images/session_lifecycle.png" alt="session_lifecycle" /></p>
+
+</div>
+
+<h3 id="multiple-sessions">Multiple sessions</h3>
+
+<div class="fullwidth">
+
+  <p>On one connection, you only can create one session with one headset. Ex: app A create session “abcd” with headset “INSIGHT-1234” . If app A want to create another session with this headset need to close session “abcd” first. But app B can create a session with headset “INSIGHT-1234”. So, headset “INSIGHT-1234” has 2 session link with it. But these session are on different apps.</p>
+
+</div>
+
+<h3 id="saved-sessions">Saved sessions</h3>
+
+<div class="fullwidth">
+
+  <p>After the session is set to “active” successfully. The data will be saved and uploaded on the Emotiv’s server. The saved datas include Raw EEG data, Motion data, Performance Metrics data.</p>
+
+</div>
+
+<!-- ### Record
+
+<div class="fullwidth">
+
+**TODO: what is this? Can we have multiple recordings per session? If so how does that work?**
+
+**On a session can make multiple recordings**
+
+</div> -->
+
+<h2 id="subscriptions">Subscriptions</h2>
+
+<div class="fullwidth">
+
+  <p>To actually receive data from a session, you have to subscribe to it. This is done using the <a href="#subscribe"><code>subscribe</code></a> method. Along with the session you want to subscribe to, you have to specify which streams you are interested in. Each stream represents a different kind of data coming from the headset.</p>
+
+</div>
+
+<h3 id="streams">Streams</h3>
+
+<div class="fullwidth">
+
+  <p>Each stream returns a series of events, with relevant data in columns depending on the type of event. You can find the columns for each event under <a href="#data-types">Data types</a>.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Stream</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a href="#mot-event">mot</a></td>
+        <td>Motion data from the accelerometer/gyroscope</td>
+      </tr>
+      <tr>
+        <td><a href="#eeg-event">eeg</a></td>
+        <td>Raw EEG data (see note in <a href="#user-accounts-and-licensing">User accounts and licensing</a>)</td>
+      </tr>
+      <tr>
+        <td><a href="#com-event">com</a></td>
+        <td>Mental Command Event</td>
+      </tr>
+      <tr>
+        <td><a href="#fac-event">fac</a></td>
+        <td>Facial Expression Event</td>
+      </tr>
+      <tr>
+        <td><a href="#met-event">met</a></td>
+        <td>Performance Metrics data</td>
+      </tr>
+      <tr>
+        <td><a href="#dev-event">dev</a></td>
+        <td>Device data include battery level , signal strength, and signal quality all of channel headset</td>
+      </tr>
+      <tr>
+        <td><a href="#pow-event">pow</a></td>
+        <td>Band Power data</td>
+      </tr>
+      <tr>
+        <td><a href="#sys-event">sys</a></td>
+        <td>System event ( for set up training )</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<!-- ## Subjects
+
+<div class="fullwidth">
+
+**TODO: Are subjects a thing? Maybe something on metadata in general? What about Notes?**
+
+**subjects is a field will use in the future.It's useful in case many persons use same account to record data. 
+So, each person will have a subject. Note is a description for a recording**
+
+</div> -->
+
+<h2 id="markers">Markers</h2>
+
+<div class="fullwidth">
+
+  <p>Markers are reference points in the data stream, used to match external events with data in the EEG.</p>
+
+  <p>Markers format in EEG stream is a pair of 2 channels <code>IEE_MARKER</code> and <code>IEE_MARKER_HARDWARE</code>.</p>
+
+  <p><code>IEE_MARKER</code> : Actual value of the marker inserted. If no marker trigger was detected at the particular timing sample, a value of 0 is added into the file (except from Extender, see <code>IEE_MARKER_HARDWARE</code>).
+Otherwise the number associated with the marker trigger (positive number), or the byte value transmitted via the USB/COM port, will be inserted for that sample.</p>
+
+  <p><code>IEE_MARKER_HARDWARE</code>: The index of device that has been used to trigger this marker. The value depends on order of devices (USB, serial, keyboard) when you use to send the marker. The first device will get an index of 1, the second will get 2, and vice versa.</p>
+
+  <p>Example:</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Event</th>
+        <th>MARKER_HARDWARE</th>
+        <th>MARKER</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1st marker from keyboard, with value 26</td>
+        <td>1</td>
+        <td>26</td>
+      </tr>
+      <tr>
+        <td>No event</td>
+        <td>0</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>2nd marker from USB, with value 8</td>
+        <td>2</td>
+        <td>8</td>
+      </tr>
+      <tr>
+        <td>3rd marker from keyboard, with value 99</td>
+        <td>1</td>
+        <td>99</td>
+      </tr>
+      <tr>
+        <td>4th marker from serial, with value 42</td>
+        <td>3</td>
+        <td>42</td>
+      </tr>
+      <tr>
+        <td>No event</td>
+        <td>0</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>5th marker from Extender</td>
+        <td>1</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>6th marker from USB, with value 27</td>
+        <td>2</td>
+        <td>27</td>
+      </tr>
+      <tr>
+        <td>7th marker from serial, with value 24</td>
+        <td>3</td>
+        <td>24</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<!-- ### Configuring
+
+<div class="fullwidth">
+
+**TODO: What does markerConfig do?**
+
+**that api for save user's marker config and upload to cloud server. So, on another machines user can load their config**
+
+</div> -->
+
+<h3 id="placing">Placing</h3>
+
+<div class="fullwidth">
+
+  <p>You can place a marker using the <a href="#injectmarker"><code>injectMarker</code></a> method.</p>
+
+</div>

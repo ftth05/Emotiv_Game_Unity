@@ -1,0 +1,102 @@
+<h2 id="unsubscribe"><code>unsubscribe</code></h2>
+
+<div class="fullwidth">
+
+  <p>Unsubscribe from a stream previously <a href=".#subscribe"><code>subscribe</code></a>d to.</p>
+
+  <p>For more information about sessions, see the <a href=".#sessions">Sessions</a> section in Concepts, and for a general overview of streams and subscriptions, see <a href=".#subscriptions">Subscriptions</a>.</p>
+
+  <h3 id="parameters">Parameters</h3>
+
+  <h4 id="request">Request</h4>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Required</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>_auth</td>
+        <td>string (<a href=".#auth-token">Auth Token</a>)</td>
+        <td>Yes</td>
+        <td>Auth token</td>
+      </tr>
+      <tr>
+        <td>streams</td>
+        <td>array of strings (<a href=".#streams">Stream name</a>)</td>
+        <td>Yes</td>
+        <td>Streams to unsubscribe from</td>
+      </tr>
+      <tr>
+        <td>session</td>
+        <td>string</td>
+        <td>No</td>
+        <td>session id to subscribe (If this param not set, Cortex will get first session in session list do not close)</td>
+      </tr>
+      <tr>
+        <td>replay</td>
+        <td>boolean</td>
+        <td>No</td>
+        <td>should set <code>false</code></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h4 id="response">Response</h4>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>(entire reponse)</td>
+        <td>string</td>
+        <td> </td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<h3 id="example-unsubscribe-from-a-live-session">Example: Unsubscribe from a live session</h3>
+
+<blockquote>
+  <p>Request</p>
+</blockquote>
+
+<pre class="highlight json tab-json--raw"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unsubscribe"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"_auth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"myToken"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"streams"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"mot"</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+  <p>Response</p>
+</blockquote>
+
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Unsubscribe stream mot with session af349e3e-c72b-44c9-992c-5ee1905cfdaa success"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>

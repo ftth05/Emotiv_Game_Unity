@@ -1,0 +1,131 @@
+<h2 id="decryptdata"><code>decryptData</code></h2>
+
+<div class="fullwidth">
+
+  <p>Decrypt file data recorded by extender. After Cortex finishes decrypt file will appear a warning message</p>
+
+  <h4 id="request">Request</h4>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Required</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>_auth</td>
+        <td>string (<a href=".#auth-token">Auth Token</a>)</td>
+        <td>Yes</td>
+        <td>Auth token</td>
+      </tr>
+      <tr>
+        <td>folderPath</td>
+        <td>string</td>
+        <td>Yes</td>
+        <td>The folder contains data file</td>
+      </tr>
+      <tr>
+        <td>outputPath</td>
+        <td>string</td>
+        <td>No</td>
+        <td>The output folder will store decrypted files. If not set, Cortex will store same input folder.</td>
+      </tr>
+      <tr>
+        <td>license</td>
+        <td>string</td>
+        <td>No</td>
+        <td>License ID of user. If not set, Cortex will use License ID from (<a href=".#auth-token">Auth Token</a>).</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h4 id="response">Response</h4>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>(entire reponse)</td>
+        <td>string</td>
+        <td> </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h4 id="warning">Warning</h4>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>code</td>
+        <td>number</td>
+        <td>warning code (4: Succes, 5: Fail)</td>
+      </tr>
+      <tr>
+        <td>message</td>
+        <td>string</td>
+        <td> </td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<h3 id="example-decrypt-data">Example: Decrypt data</h3>
+
+<blockquote>
+  <p>Request</p>
+</blockquote>
+
+<pre class="highlight json tab-json--raw"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"decryptData"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"_auth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abcd"</span><span class="w">
+    </span><span class="s2">"folderPath"</span><span class="p">:</span><span class="s2">"..."</span><span class="w">
+    </span><span class="s2">"outputPath"</span><span class="p">:</span><span class="s2">".."</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+  <p>Response</p>
+</blockquote>
+
+<pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cortex has started the process of extract the data"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+  <p>Warning</p>
+</blockquote>
+
+<pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"warning"</span><span class="p">:</span><span class="w"> 
+    </span><span class="p">{</span><span class="w">
+    	</span><span class="s2">"code"</span><span class="p">:</span><span class="mi">4</span><span class="w">
+    	</span><span class="s2">"message"</span><span class="p">:</span><span class="s2">"Export data from path ... to path ... successful"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>

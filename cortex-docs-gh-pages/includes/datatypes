@@ -1,0 +1,885 @@
+<h1 id="data-types">Data types</h1>
+
+<!-- ## Auth Token
+
+```json
+{
+  "_auth": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE0OTA4OTUxMTYsInVzZXJuYW1lIjoiQmFzaWMiLCJ1c2VyQ2xvdWRJZCI6LTEsImxpY2Vuc2VJZCI6IiIsImxpY2Vuc2VTY29wZSI6MX0.S66hU4wnMPO8R107Y-rrUqWtAWcbRiKp9KTNwFHNDvs"
+}
+```
+
+An auth token is an opaque string returned by the [`authorize`](#authorize) method. You shouldn't make any particular assumptions about its content or length. -->
+
+<h2 id="headset-object">Headset Object</h2>
+
+<blockquote>
+  <p>Example Headset object</p>
+</blockquote>
+
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"connectedBy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dongle"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"dongle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6ff"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"firmware"</span><span class="p">:</span><span class="w"> </span><span class="s2">"925"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"INSIGHT-59683C10"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"sensors"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="s2">"settings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"eegRate"</span><span class="p">:</span><span class="w"> </span><span class="mi">128</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"eegRes"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"memsRate"</span><span class="p">:</span><span class="w"> </span><span class="mi">128</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"memsRes"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EPOC"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"connected"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>The headset object is returned by <a href="#queryheadsets"><code>queryHeadsets</code></a>. It contains the following fields:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>connectedBy</td>
+      <td>One of <code>dongle</code>, <code>usb cable</code>, <code>bluetooth</code></td>
+    </tr>
+    <tr>
+      <td>dongle</td>
+      <td>Dongle version ( connect by bluetooth <code>dongle</code>=0)</td>
+    </tr>
+    <tr>
+      <td>firmware</td>
+      <td>Firmware version of headset</td>
+    </tr>
+    <tr>
+      <td>id</td>
+      <td>Unique identifier for this headset</td>
+    </tr>
+    <tr>
+      <td>label</td>
+      <td>Custom name for headset (use in the future)</td>
+    </tr>
+    <tr>
+      <td>sensors</td>
+      <td>array of the channels headset (Use in the future)</td>
+    </tr>
+    <tr>
+      <td>status</td>
+      <td>headset status</td>
+    </tr>
+    <tr>
+      <td>settings</td>
+      <td>See below</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The <code>settings</code> field contains the following subfields:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>eegRate</td>
+      <td>Sample rate for EEG data (in Hz, 128 or 256)</td>
+    </tr>
+    <tr>
+      <td>eegRes</td>
+      <td>Resolution for EEG data (in bits, 14 or 16)</td>
+    </tr>
+    <tr>
+      <td>memsRate</td>
+      <td>Sample rate for movement data (in Hz, 0, 32, 64, 128)</td>
+    </tr>
+    <tr>
+      <td>memsRes</td>
+      <td>Resolution for movement data (in bits, 14 or 16)</td>
+    </tr>
+    <tr>
+      <td>mode</td>
+      <td>One of <code>EPOC</code>, <code>EPOCPLUS</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- **TODO: if we have a method to change the settings, maybe some of this information should move there, and/or go in a concepts section on headset settings** -->
+
+<h2 id="session-object">Session Object</h2>
+
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"appId"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"headset"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"connectedBy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dongle"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"dongle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6ff"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"firmware"</span><span class="p">:</span><span class="w"> </span><span class="s2">"610"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EPOCPLUS-DEADBEEF"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"sensors"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"settings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"eegRate"</span><span class="p">:</span><span class="w"> </span><span class="mi">128</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"eegRes"</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"memsRate"</span><span class="p">:</span><span class="w"> </span><span class="mi">64</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"memsRes"</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EPOCPLUS"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"connected"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9ea68a11-253d-427e-8020-5bc5e4c99a69"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"license"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1ca3fd1c-4ce8-4643-8aa0-28a3255019e8"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"logs"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"recordInfos"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"demo"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"notes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test1"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"recordId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c7030f18-4b0f-4a6d-b953-a2b16edd217e"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sampleMarkerAFF"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="mi">174</span><span class="p">,</span><span class="w">
+          </span><span class="mi">239</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="s2">"sampleMarkerEEG"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="mi">11140</span><span class="p">,</span><span class="w">
+          </span><span class="mi">15324</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="s2">"startMarkerRecording"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-01T15:25:00.994326+07:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"stopMarkerRecording"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-01T15:25:33.906495+07:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"subject"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sub 2"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"markers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"enums"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"record-1"</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="s2">"events"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">[</span><span class="w">
+          </span><span class="s2">"2017-06-01T15:25:00.976923+07:00"</span><span class="p">,</span><span class="w">
+          </span><span class="mi">1</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="p">[</span><span class="w">
+          </span><span class="s2">"2017-06-01T15:25:33.878849+07:00"</span><span class="p">,</span><span class="w">
+          </span><span class="mi">-1</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"demo"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"port"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EmotivProRecording"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"owner"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cortextest"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"profile"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"project"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Cortex"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"recording"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"started"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-01T15:23:33.130641+07:00"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"closed"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"stopped"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-01T15:25:53.315695+07:00"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"streams"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"subject"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test1"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>The session object is returned by <a href="#createsession"><code>createSession</code></a>, <a href="#updatesession"><code>updateSession</code></a> and <a href="#querysessions"><code>querySessions</code></a>. It can also be updated by updateSession. It contains the following fields:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>appId</td>
+      <td>Unique ID for the application which you use to <a href="#authorize"><code>authorize</code></a></td>
+    </tr>
+    <tr>
+      <td>headset</td>
+      <td>See the <a href="#headset-object">Headset</a> data type</td>
+    </tr>
+    <tr>
+      <td>id</td>
+      <td>Unique ID for the session</td>
+    </tr>
+    <tr>
+      <td>license</td>
+      <td>License ID link with this session</td>
+    </tr>
+    <tr>
+      <td>logs</td>
+      <td>Contain recording info</td>
+    </tr>
+    <tr>
+      <td>markers</td>
+      <td>Contain marker info ( set by call <a href="#injectmarker"><code>injectMarker</code></a> )</td>
+    </tr>
+    <tr>
+      <td>owner</td>
+      <td>Username that created the session (<code>owner</code>= <code>Basic</code> if an anonymous user)</td>
+    </tr>
+    <tr>
+      <td>profile</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>project</td>
+      <td>User-specified project name</td>
+    </tr>
+    <tr>
+      <td>recording</td>
+      <td>Whether the session is currently recording</td>
+    </tr>
+    <tr>
+      <td>started</td>
+      <td><a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> Timestamp for recording start</td>
+    </tr>
+    <tr>
+      <td>status</td>
+      <td>Current status: <code>opened</code>, <code>activated</code> or <code>closed</code>. See <a href="#session-lifecycle">Session lifecycle</a></td>
+    </tr>
+    <tr>
+      <td>stopped</td>
+      <td><a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> Timestamp for recording start</td>
+    </tr>
+    <tr>
+      <td>streams</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>subject</td>
+      <td>User-specified subject</td>
+    </tr>
+    <tr>
+      <td>tags</td>
+      <td>An arrary of User-specified tag</td>
+    </tr>
+    <tr>
+      <td>title</td>
+      <td>User-specified title</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="marker">Marker</h2>
+
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"enums"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"record-1"</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"events"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"2017-06-01T15:25:00.976923+07:00"</span><span class="p">,</span><span class="w">
+      </span><span class="mi">1</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"2017-06-01T15:25:33.878849+07:00"</span><span class="p">,</span><span class="w">
+      </span><span class="mi">-1</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"demo"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"port"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EmotivProRecording"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>code</td>
+      <td>value of channel <code>IEE_MARKER_HARDWARE</code> in <a href="#markers"><code>Markers</code></a></td>
+    </tr>
+    <tr>
+      <td>enums</td>
+      <td>array of string value when set <code>value</code> in <a href="#injectmarker"><code>injectMarker</code></a> is string</td>
+    </tr>
+    <tr>
+      <td>events</td>
+      <td>array of marker event</td>
+    </tr>
+    <tr>
+      <td>label</td>
+      <td>label name of marker</td>
+    </tr>
+    <tr>
+      <td>port</td>
+      <td>marker source (‘usb’,’keyboard’,’serial port’…)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="event">Event</h2>
+
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"mot"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">...</span><span class="p">],</span><span class="w">
+  </span><span class="s2">"sid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"af349e3e-c72b-44c9-992c-5ee1905cfdaa"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"time"</span><span class="p">:</span><span class="w"> </span><span class="mf">1283.58928052493</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Events are generated in response to <a href="#subscribe"><code>subscribe</code></a> requests. Each event contains the following fields:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>(stream)</td>
+      <td>Key depending on stream name, value will be an array of data (see below)</td>
+    </tr>
+    <tr>
+      <td>sid</td>
+      <td>ID of the session that generated this event</td>
+    </tr>
+    <tr>
+      <td>time (optional)</td>
+      <td>Time since Cortex start in seconds</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- **TODO: should we tell people not to rely on column order and trust what they get back from `subscribe`?**
+
+**TODO: examples for all the other events**
+
+**TODO: what are the other events?** -->
+
+<p>The order of value in array value get from response of the request <a href="#subscribe"><code>subscribe</code></a>.</p>
+
+<h2 id="eeg-event"><code>eeg</code> event</h2>
+
+<p>Depend on the headset <code>eeg</code> can have 5 channels eeg or 14 channels eeg (5 channels for Insight headset, 14 channels for EPOC and EPOC PLUS headset)</p>
+
+<blockquote>
+  <p><code>eeg</code> event of Insight headset</p>
+</blockquote>
+
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"eeg"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="mf">12.0</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+    </span><span class="mf">150.0</span><span class="p">,</span><span class="w">
+    </span><span class="mf">8203.0</span><span class="p">,</span><span class="w">
+    </span><span class="mf">8225.0</span><span class="p">,</span><span class="w">
+    </span><span class="mf">8183.0</span><span class="p">,</span><span class="w">
+    </span><span class="mf">6346.0</span><span class="p">,</span><span class="w">
+    </span><span class="mf">4439.0</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"sid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"af349e3e-c72b-44c9-992c-5ee1905cfdaa"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"time"</span><span class="p">:</span><span class="w"> </span><span class="mf">1283.58928052493</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<table>
+  <thead>
+    <tr>
+      <th>Column</th>
+      <th>Description</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>IED_COUNTER</td>
+      <td>Counter that increments by 1 each event</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>IED_INTERPOLATED</td>
+      <td>1 if this is interpolated package, otherwise = 0</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>IED_RAW_CQ</td>
+      <td>Signal quality raw value</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>IED_AF3</td>
+      <td>AF3 channel</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>IED_T7</td>
+      <td>T7 channel</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>IED_Pz</td>
+      <td>Pz channel</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>IED_T8</td>
+      <td>T8 channel</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>IED_AF4</td>
+      <td>AF4 channel</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>IED_MARKER_HARDWARE</td>
+      <td>marker hardware value</td>
+      <td>See <a href="#markers"><code>Markers</code></a></td>
+    </tr>
+    <tr>
+      <td>IED_MARKER</td>
+      <td>marker value</td>
+      <td>See <a href="#markers"><code>Markers</code></a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="mot-event"><code>mot</code> event</h2>
+
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"mot"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="mf">2.0</span><span class="p">,</span><span class="w">
+    </span><span class="mf">8203.0</span><span class="p">,</span><span class="w">
+    </span><span class="mf">8225.0</span><span class="p">,</span><span class="w">
+    </span><span class="mf">8183.0</span><span class="p">,</span><span class="w">
+    </span><span class="mf">6346.0</span><span class="p">,</span><span class="w">
+    </span><span class="mf">4439.0</span><span class="p">,</span><span class="w">
+    </span><span class="mf">8214.0</span><span class="p">,</span><span class="w">
+    </span><span class="mf">8066.0</span><span class="p">,</span><span class="w">
+    </span><span class="mf">8058.0</span><span class="p">,</span><span class="w">
+    </span><span class="mf">8292.0</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"sid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"af349e3e-c72b-44c9-992c-5ee1905cfdaa"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"time"</span><span class="p">:</span><span class="w"> </span><span class="mf">1283.58928052493</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>The unit of motion data is angular velocity, degrees per second.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Column</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>IMD_COUNTER</td>
+      <td>Counter that increments by 1 each event</td>
+    </tr>
+    <tr>
+      <td>IMD_GYROX</td>
+      <td>Gyroscope, X axis</td>
+    </tr>
+    <tr>
+      <td>IMD_GYROY</td>
+      <td>Gyroscope, Y axis</td>
+    </tr>
+    <tr>
+      <td>IMD_GYROZ</td>
+      <td>Gyroscope, Z axis</td>
+    </tr>
+    <tr>
+      <td>IMD_ACCX</td>
+      <td>Acceleration, X axis</td>
+    </tr>
+    <tr>
+      <td>IMD_ACCY</td>
+      <td>Acceleration, Y axis</td>
+    </tr>
+    <tr>
+      <td>IMD_ACCZ</td>
+      <td>Acceleration, Z axis</td>
+    </tr>
+    <tr>
+      <td>IMD_MAGX</td>
+      <td>Magnetometer, X axis</td>
+    </tr>
+    <tr>
+      <td>IMD_MAGY</td>
+      <td>Magnetometer, Y axis</td>
+    </tr>
+    <tr>
+      <td>IMD_MAGZ</td>
+      <td>Magnetometer, Z axis</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="com-event"><code>com</code> event</h2>
+
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"com"</span><span class="p">:[</span><span class="w">
+    </span><span class="s2">"push"</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.673717498779297</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"sid"</span><span class="p">:</span><span class="s2">"46d18597-7034-40ab-9d6e-d617a89a24ce"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"time"</span><span class="p">:</span><span class="mf">245.356536865234</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<table>
+  <thead>
+    <tr>
+      <th>Column</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>act</td>
+      <td>Mental command current action</td>
+    </tr>
+    <tr>
+      <td>pow</td>
+      <td>Mental command current action power</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="fac-event"><code>fac</code> event</h2>
+
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"fac"</span><span class="p">:[</span><span class="w">
+    </span><span class="s2">"lookD"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"surprise"</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"neutral"</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0446911528706551</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"sid"</span><span class="p">:</span><span class="s2">"9a62d98f-5ad0-4bf9-8fa1-9695e2c92f2f"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"time"</span><span class="p">:</span><span class="mf">383.103973388672</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<table>
+  <thead>
+    <tr>
+      <th>Column</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>eyeAct</td>
+      <td>eye action</td>
+    </tr>
+    <tr>
+      <td>uAct</td>
+      <td>upper face action</td>
+    </tr>
+    <tr>
+      <td>uPow</td>
+      <td>upper face action power</td>
+    </tr>
+    <tr>
+      <td>lAct</td>
+      <td>lower face action</td>
+    </tr>
+    <tr>
+      <td>lPow</td>
+      <td>lower face action power</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="met-event"><code>met</code> event</h2>
+
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"met"</span><span class="p">:[</span><span class="w">
+    </span><span class="mf">0.651354849338531</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.302940726280212</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.560504496097565</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.298657447099686</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"sid"</span><span class="p">:</span><span class="s2">"9a62d98f-5ad0-4bf9-8fa1-9695e2c92f2f"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"time"</span><span class="p">:</span><span class="mf">195.577545166016</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<table>
+  <thead>
+    <tr>
+      <th>Column</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>int</td>
+      <td>interest value</td>
+    </tr>
+    <tr>
+      <td>str</td>
+      <td>stress value</td>
+    </tr>
+    <tr>
+      <td>rel</td>
+      <td>relaxation value</td>
+    </tr>
+    <tr>
+      <td>exc</td>
+      <td>excitement value</td>
+    </tr>
+    <tr>
+      <td>eng</td>
+      <td>engagement value</td>
+    </tr>
+    <tr>
+      <td>lex</td>
+      <td>long term excitement value</td>
+    </tr>
+    <tr>
+      <td>foc</td>
+      <td>focus value</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="dev-event"><code>dev</code> event</h2>
+
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"dev"</span><span class="p">:[</span><span class="w">
+    </span><span class="mi">4</span><span class="p">,</span><span class="w">
+    </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="p">[</span><span class="w">
+      </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+      </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+      </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+      </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+      </span><span class="mf">0.0</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"sid"</span><span class="p">:</span><span class="s2">"26cf6ed7-38fd-4125-9474-83c161d9498f"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"time"</span><span class="p">:</span><span class="mf">11664.9873046875</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Depend on the headset signal quality will have 5 elements or 14 elements</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Column</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Battery</td>
+      <td>battery level of headset</td>
+    </tr>
+    <tr>
+      <td>Signal</td>
+      <td>signal strength</td>
+    </tr>
+    <tr>
+      <td>IEE_CHAN_AF3</td>
+      <td>signal quality of channel AF3</td>
+    </tr>
+    <tr>
+      <td>IEE_CHAN_T7</td>
+      <td>signal quality of channel T7</td>
+    </tr>
+    <tr>
+      <td>IEE_CHAN_Pz</td>
+      <td>singal quality of channel Pz</td>
+    </tr>
+    <tr>
+      <td>IEE_CHAN_T8</td>
+      <td>signal quality of channel T8</td>
+    </tr>
+    <tr>
+      <td>IEE_CHAN_AF4</td>
+      <td>signal quality of channel AF4</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="pow-event"><code>pow</code> event</h2>
+
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"pow"</span><span class="p">:[</span><span class="w">
+    </span><span class="mf">64.0</span><span class="p">,</span><span class="w">
+    </span><span class="mf">46.0</span><span class="p">,</span><span class="w">
+    </span><span class="mf">66.0</span><span class="p">,</span><span class="w">
+    </span><span class="mf">65.0</span><span class="p">,</span><span class="w">
+    </span><span class="mf">71.0</span><span class="p">,</span><span class="w">
+    </span><span class="mf">42.0</span><span class="p">,</span><span class="w">
+    </span><span class="mf">57.0</span><span class="p">,</span><span class="w">
+    </span><span class="mf">37.0</span><span class="p">,</span><span class="w">
+    </span><span class="mf">369.0</span><span class="p">,</span><span class="w">
+    </span><span class="mf">76.0</span><span class="p">,</span><span class="w">
+    </span><span class="mf">22.0</span><span class="p">,</span><span class="w">
+    </span><span class="mf">40.0</span><span class="p">,</span><span class="w">
+    </span><span class="mf">17.0</span><span class="p">,</span><span class="w">
+    </span><span class="mf">50.0</span><span class="p">,</span><span class="w">
+    </span><span class="mf">41.0</span><span class="p">,</span><span class="w">
+    </span><span class="mf">14.0</span><span class="p">,</span><span class="w">
+    </span><span class="mf">10.0</span><span class="p">,</span><span class="w">
+    </span><span class="mf">31.0</span><span class="p">,</span><span class="w">
+    </span><span class="mf">26.0</span><span class="p">,</span><span class="w">
+    </span><span class="mf">30.0</span><span class="p">,</span><span class="w">
+    </span><span class="mf">20.0</span><span class="p">,</span><span class="w">
+    </span><span class="mf">36.0</span><span class="p">,</span><span class="w">
+    </span><span class="mf">26.0</span><span class="p">,</span><span class="w">
+    </span><span class="mf">80.0</span><span class="p">,</span><span class="w">
+    </span><span class="mf">40.0</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"sid"</span><span class="p">:</span><span class="s2">"d8834c5f-ae19-4a3c-8ce0-a861c5e05daf"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<table>
+  <thead>
+    <tr>
+      <th>Column</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>IED_AF3/theta</td>
+      <td>theta value of channel AF3</td>
+    </tr>
+    <tr>
+      <td>IED_AF3/alpha</td>
+      <td>alpha value of channel AF3</td>
+    </tr>
+    <tr>
+      <td>IED_AF3/betaL</td>
+      <td>low-beta value of channel AF3</td>
+    </tr>
+    <tr>
+      <td>IED_AF3/betaH</td>
+      <td>high-beta value of channel AF3</td>
+    </tr>
+    <tr>
+      <td>IED_AF3/gamma</td>
+      <td>gamma value of channel AF3</td>
+    </tr>
+    <tr>
+      <td>IED_T7/theta</td>
+      <td>theta value of channel T7</td>
+    </tr>
+    <tr>
+      <td>IED_T7/alpha</td>
+      <td>alpha value of channel T7</td>
+    </tr>
+    <tr>
+      <td>IED_T7/betaL</td>
+      <td>low-beta value of channel T7</td>
+    </tr>
+    <tr>
+      <td>IED_T7/betaH</td>
+      <td>high-beta value of channel T7</td>
+    </tr>
+    <tr>
+      <td>IED_T7/gamma</td>
+      <td>gamma value of channel Pz</td>
+    </tr>
+    <tr>
+      <td>IED_Pz/theta</td>
+      <td>theta value of channel Pz</td>
+    </tr>
+    <tr>
+      <td>IED_Pz/alpha</td>
+      <td>alpha value of channel Pz</td>
+    </tr>
+    <tr>
+      <td>IED_Pz/betaL</td>
+      <td>low-beta value of channel Pz</td>
+    </tr>
+    <tr>
+      <td>IED_Pz/betaH</td>
+      <td>high-beta value of channel Pz</td>
+    </tr>
+    <tr>
+      <td>IED_Pz/gamma</td>
+      <td>gamma value of channel Pz</td>
+    </tr>
+    <tr>
+      <td>IED_T8/theta</td>
+      <td>theta value of channel T8</td>
+    </tr>
+    <tr>
+      <td>IED_T8/alpha</td>
+      <td>alpha value of channel T8</td>
+    </tr>
+    <tr>
+      <td>IED_T8/betaL</td>
+      <td>low-beta value of channel T8</td>
+    </tr>
+    <tr>
+      <td>IED_T8/betaH</td>
+      <td>high-beta value of channel T8</td>
+    </tr>
+    <tr>
+      <td>IED_T8/gamma</td>
+      <td>gamma value of channel T8</td>
+    </tr>
+    <tr>
+      <td>IED_AF4/theta</td>
+      <td>theta value of channel AF4</td>
+    </tr>
+    <tr>
+      <td>IED_AF4/alpha</td>
+      <td>alpha value of channel AF4</td>
+    </tr>
+    <tr>
+      <td>IED_AF4/betaL</td>
+      <td>low-beta value of channel AF4</td>
+    </tr>
+    <tr>
+      <td>IED_AF4/betaH</td>
+      <td>high-beta value of channel AF4</td>
+    </tr>
+    <tr>
+      <td>IED_AF4/gamma</td>
+      <td>gamma value of channel AF4</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="sys-event"><code>sys</code> event</h2>
+
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"sid"</span><span class="p">:</span><span class="s2">"46d18597-7034-40ab-9d6e-d617a89a24ce"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"sys"</span><span class="p">:[</span><span class="w">
+    </span><span class="s2">"Mental Command"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"MC_Started"</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<table>
+  <thead>
+    <tr>
+      <th>Column</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>event</td>
+      <td>Detection name (Mental Command or Facial Expression)</td>
+    </tr>
+    <tr>
+      <td>msg</td>
+      <td>Training event of Mental Command or Facial Expression</td>
+    </tr>
+  </tbody>
+</table>
+

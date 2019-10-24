@@ -1,0 +1,337 @@
+<h2 id="queryprofile"><code>queryProfile</code></h2>
+
+<div class="fullwidth">
+
+  <p>Get all trainining profile of specific user on the local machine</p>
+
+  <h3 id="parameters">Parameters</h3>
+
+  <h4 id="request">Request</h4>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Required</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>_auth</td>
+        <td>string (<a href=".#auth-token">Auth Token</a>)</td>
+        <td>Yes</td>
+        <td>Auth token</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h4 id="response">Response</h4>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>(entire reponse)</td>
+        <td>array of json object</td>
+        <td>All profiles of user</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<h3 id="example-query-profile">Example: Query profile</h3>
+
+<blockquote>
+  <p>Request</p>
+</blockquote>
+
+<pre class="highlight json tab-json--raw"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"queryProfile"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"_auth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abcd"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<!-- ```javascript
+  ws.send({
+    "jsonrpc": "2.0",
+    "method": "queryProfile",
+    "params": {
+      "_auth": "abcd"
+    },
+    "id": 1
+  });
+``` -->
+
+<blockquote>
+  <p>Response</p>
+</blockquote>
+
+<pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> 
+    </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"name"</span><span class="p">:</span><span class="err">test</span><span class="mi">1</span><span class="s2">",
+          "</span><span class="err">meta</span><span class="s2">":
+          {
+            "</span><span class="err">creation_time</span><span class="s2">":"</span><span class="mi">2017-12-18</span><span class="err">T</span><span class="mi">14</span><span class="p">:</span><span class="mi">13</span><span class="p">:</span><span class="mf">14.288547</span><span class="err">+</span><span class="mi">07</span><span class="p">:</span><span class="mi">00</span><span class="s2">"
+          }
+      },
+      {
+          "</span><span class="err">name</span><span class="s2">":test2"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"meta"</span><span class="p">:</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"creation_time"</span><span class="p">:</span><span class="s2">"2017-11-18T15:17:14.288547+07:00"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<h2 id="setupprofile"><code>setupProfile</code></h2>
+
+<div class="fullwidth">
+
+  <p>This method help you work with training profile. You can save training data to new profile, load profile, upload profile to Emotiv’s server ….</p>
+
+  <h3 id="parameters-1">Parameters</h3>
+
+  <h4 id="request-1">Request</h4>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Required</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>_auth</td>
+        <td>string (<a href=".#auth-token">Auth Token</a>)</td>
+        <td>Yes</td>
+        <td>Auth token</td>
+      </tr>
+      <tr>
+        <td>headset</td>
+        <td>string</td>
+        <td>No</td>
+        <td>headset ID. This field is required when load or save profile</td>
+      </tr>
+      <tr>
+        <td>profile</td>
+        <td>string</td>
+        <td>Yes</td>
+        <td>profile name</td>
+      </tr>
+      <tr>
+        <td>newProfileName</td>
+        <td>string</td>
+        <td>No</td>
+        <td>new profile name when you want to rename profile</td>
+      </tr>
+      <tr>
+        <td>status</td>
+        <td>string</td>
+        <td>Yes</td>
+        <td>See below</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>The <code>status</code> is action Cortex will do on profile:</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Value</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>“create”</td>
+        <td>create new training profile</td>
+      </tr>
+      <tr>
+        <td>“save”</td>
+        <td>save current training data to profile</td>
+      </tr>
+      <tr>
+        <td>“load”</td>
+        <td>load training data from profile</td>
+      </tr>
+      <tr>
+        <td>“unload”</td>
+        <td>remove training data of one profile in Cortex</td>
+      </tr>
+      <tr>
+        <td>“rename”</td>
+        <td>rename training profile file</td>
+      </tr>
+      <tr>
+        <td>“delete”</td>
+        <td>remove training profile on the local machine</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h4 id="response-1">Response</h4>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>(entire reponse)</td>
+        <td>string</td>
+        <td> </td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<h3 id="example-create-new-profile">Example: create new profile</h3>
+
+<blockquote>
+  <p>Request</p>
+</blockquote>
+
+<pre class="highlight json tab-json--raw"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"setupProfile"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"_auth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abcd"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"headset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"INSIGHT-DEADBEEF"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"profile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"create"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<!-- ```javascript
+  ws.send({
+    "jsonrpc": "2.0",
+    "method": "setupProfile",
+    "params": {
+      "_auth": "abcd",
+      "headset": "INSIGHT-DEADBEEF",
+      "profile": "test",
+      "status": "create"
+    },
+    "id": 1
+  });
+``` -->
+
+<blockquote>
+  <p>Response</p>
+</blockquote>
+
+<pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="s2">"create profile test successfully"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<h2 id="getcurrentprofile"><code>getCurrentProfile</code></h2>
+
+<div class="fullwidth">
+
+  <p>This method help you check have any profile linking with a specific headset</p>
+
+  <h3 id="parameters-2">Parameters</h3>
+
+  <h4 id="request-2">Request</h4>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Required</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>_auth</td>
+        <td>string (<a href=".#auth-token">Auth Token</a>)</td>
+        <td>Yes</td>
+        <td>Auth token</td>
+      </tr>
+      <tr>
+        <td>headset</td>
+        <td>string</td>
+        <td>Yes</td>
+        <td>headset ID.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h4 id="response-2">Response</h4>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>json</td>
+        <td>string</td>
+        <td>return null if does not have any profile.</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<h3 id="example">Example</h3>
+
+<blockquote>
+  <p>Request</p>
+</blockquote>
+
+<pre class="highlight json tab-json--raw"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"getCurrentProfile"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"_auth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abcd"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"headset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"INSIGHT-DEADBEEF"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+  <p>Response</p>
+</blockquote>
+
+<pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test1"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>

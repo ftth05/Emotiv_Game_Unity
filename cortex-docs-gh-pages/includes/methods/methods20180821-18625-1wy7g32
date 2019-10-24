@@ -1,0 +1,4073 @@
+<h1 id="methods">Methods</h1>
+
+<h2 id="login"><code>login</code></h2>
+
+<div class="fullwidth">
+
+  <p>You need to provide a username and password of user from the <a href="https://id.emotivcloud.com/eoidc/api-auth/login/">Emotiv Cloud</a>, and the client id/secret for your application.</p>
+
+  <h3 id="parameters">Parameters</h3>
+
+  <h4 id="request">Request</h4>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Required</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>username</td>
+        <td>string</td>
+        <td>Yes</td>
+        <td>Emotiv ID</td>
+      </tr>
+      <tr>
+        <td>password</td>
+        <td>string</td>
+        <td>Yes</td>
+        <td>Emotiv Password</td>
+      </tr>
+      <tr>
+        <td>client_id</td>
+        <td>string</td>
+        <td>Yes</td>
+        <td>Client ID</td>
+      </tr>
+      <tr>
+        <td>client_secret</td>
+        <td>string</td>
+        <td>Yes</td>
+        <td>Client Secret</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<h3 id="example-emotiv-user-login">Example: Emotiv user login</h3>
+
+<blockquote>
+  <p>Request</p>
+</blockquote>
+
+<pre class="highlight json tab-json--raw"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"login"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"..."</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"..."</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"client_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"..."</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"client_secret"</span><span class="p">:</span><span class="w"> </span><span class="s2">"..."</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<!-- ```javascript
+  ws.send({
+    "jsonrpc": "2.0",
+    "method": "login",
+    "params": {
+      "username": "...",
+      "password": "...",
+      "client_id": "...",
+      "client_secret": "...",
+    },
+    "id": 1
+  });
+``` -->
+
+<blockquote>
+  <p>Response</p>
+</blockquote>
+
+<pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="s2">"...."</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<h2 id="getuserlogin"><code>getUserLogin</code></h2>
+
+<div class="fullwidth">
+
+  <p>Return all user logged in to Cortex.</p>
+
+</div>
+
+<h3 id="example-get-user-login">Example: get User Login</h3>
+
+<blockquote>
+  <p>Request</p>
+</blockquote>
+
+<pre class="highlight json tab-json--raw"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"getUserLogin"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<!-- ```javascript
+  ws.send({
+    "jsonrpc": "2.0",
+    "method": "getUserLogin",
+    "id": 1
+  });
+``` -->
+
+<blockquote>
+  <p>Response</p>
+</blockquote>
+
+<pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"cortextes"</span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<h2 id="logout"><code>logout</code></h2>
+
+<div class="fullwidth">
+
+  <p>You need to provide a username.</p>
+
+  <h3 id="parameters-1">Parameters</h3>
+
+  <h4 id="request-1">Request</h4>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Required</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>username</td>
+        <td>string</td>
+        <td>Yes</td>
+        <td>Emotiv ID</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<h3 id="example-emotiv-user-logout">Example: Emotiv user logout</h3>
+
+<blockquote>
+  <p>Request</p>
+</blockquote>
+
+<pre class="highlight json tab-json--raw"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"logout"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"..."</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<!-- ```javascript
+  ws.send({
+    "jsonrpc": "2.0",
+    "method": "logout",
+    "params": {
+      "username": "...",
+    },
+    "id": 1
+  });
+``` -->
+
+<blockquote>
+  <p>Response</p>
+</blockquote>
+
+<pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="s2">"...."</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<h2 id="authorize"><code>authorize</code></h2>
+
+<div class="fullwidth">
+
+  <p>Authenticates a user. You can authenticate as an anonymous user, but to get access to Raw EEG data or high-resolution performance metrics or both, you need to provide a username and password of user from the <a href="https://id.emotivcloud.com/eoidc/api-auth/login/">Emotiv Cloud</a>, and the client id/secret for your application.</p>
+
+  <p>Auth tokens are valid for 48 hours. If you want to use them after that you must call <code>authorize</code> again or <a href="#example-token-refresh">refresh</a> the token.</p>
+
+  <p>For more information about authentication, client ids, auth tokens and the token lifecycle, see the <a href="#authorization">Authorization</a> section in Concepts.</p>
+
+  <h3 id="parameters-2">Parameters</h3>
+
+  <h4 id="request-2">Request</h4>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Required</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>client_id</td>
+        <td>string</td>
+        <td>No</td>
+        <td>Client ID</td>
+      </tr>
+      <tr>
+        <td>client_secret</td>
+        <td>string</td>
+        <td>No</td>
+        <td>Client Secret</td>
+      </tr>
+      <tr>
+        <td>license</td>
+        <td>string</td>
+        <td>No</td>
+        <td>License ID</td>
+      </tr>
+      <tr>
+        <td>debit</td>
+        <td>number</td>
+        <td>No</td>
+        <td>Number of session will use on local machine (if don’t set default <code>debit</code> = 0)</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h4 id="response">Response</h4>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>_auth</td>
+        <td>string (<a href="#auth-token">Auth Token</a>)</td>
+        <td>Token for use in subsequent calls</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<h3 id="example-anonymous-authorize">Example: Anonymous authorize</h3>
+
+<blockquote>
+  <p>Request</p>
+</blockquote>
+
+<pre class="highlight json tab-json--raw"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"authorize"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<!-- ```javascript
+  ws.send({
+    "jsonrpc": "2.0",
+    "method": "authorize",
+    "params": {},
+    "id": 1
+  });
+``` -->
+
+<blockquote>
+  <p>Response</p>
+</blockquote>
+
+<pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"_auth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"..."</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This is an authorize with no app information.</p>
+
+<h3 id="example-full-user">Example: Full user</h3>
+
+<p>If you don’t set a specific license, Cortex will use oldest license which is activated.</p>
+
+<blockquote>
+  <p>Request</p>
+</blockquote>
+
+<pre class="highlight json tab-json--raw"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"authorize"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"client_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"..."</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"client_secret"</span><span class="p">:</span><span class="w"> </span><span class="s2">"..."</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"license"</span><span class="p">:</span><span class="w"> </span><span class="s2">"..."</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"debit"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<!-- ```javascript
+  ws.send({
+    "jsonrpc": "2.0",
+    "method": "authorize",
+    "params": {
+      "client_id": "...",
+      "client_secret": "...",
+      "license": "..."
+      "debit": 10
+    },
+    "id": 1
+  });
+``` -->
+
+<blockquote>
+  <p>Response</p>
+</blockquote>
+
+<pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"_auth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"..."</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This is an authorize with a client id and secret, which you get when you sign up for an application. For more information, see the <a href="#authorization">Authorization</a> section in Concepts.</p>
+
+<h3 id="example-token-refresh">Example: Token refresh</h3>
+
+<blockquote>
+  <p>Request</p>
+</blockquote>
+
+<pre class="highlight json tab-json--raw"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"generateNewToken"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"..."</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<!-- ```javascript
+  ws.send({
+    "jsonrpc": "2.0",
+    "method": "generateNewToken",
+    "params": {
+      "token": "..."
+    },
+    "id": 1
+  });
+``` -->
+
+<blockquote>
+  <p>Response</p>
+</blockquote>
+
+<pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"_auth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"..."</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This will return a new token for you to use.</p>
+
+<p>You can genareate new token at any time. Both old token and new token can use if it doesn’t expire .</p>
+
+<h2 id="acceptlicense"><code>acceptLicense</code></h2>
+
+<div class="fullwidth">
+
+  <p>End User has to accept our license to use Cortex. If user doesn’t accept, they can not use Cortex anymore.</p>
+
+  <h3 id="parameters-3">Parameters</h3>
+
+  <h4 id="request-3">Request</h4>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Required</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>_auth</td>
+        <td>string (<a href="#auth-token">Auth Token</a>)</td>
+        <td>Yes</td>
+        <td>Auth token</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h4 id="response-1">Response</h4>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>_auth</td>
+        <td>string (<a href="#auth-token">Auth Token</a>)</td>
+        <td>New Cortex token</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<h3 id="example-emotiv-user-accept-the-license">Example: Emotiv user accept the license</h3>
+
+<blockquote>
+  <p>Request</p>
+</blockquote>
+
+<pre class="highlight json tab-json--raw"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"acceptLicense"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"_auth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abcd"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+  <p>Response</p>
+</blockquote>
+
+<pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"_auth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"..."</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<h2 id="getlicenseinfo"><code>getLicenseInfo</code></h2>
+
+<div class="fullwidth">
+
+  <p>Get Info of the current license.</p>
+
+  <h3 id="parameters-4">Parameters</h3>
+
+  <h4 id="request-4">Request</h4>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Required</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>_auth</td>
+        <td>string (<a href="#auth-token">Auth Token</a>)</td>
+        <td>Yes</td>
+        <td>Auth token</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h4 id="response-2">Response</h4>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>is_commercial</td>
+        <td>bool</td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>recording_count</td>
+        <td>number</td>
+        <td>the number of recording already used</td>
+      </tr>
+      <tr>
+        <td>license_id</td>
+        <td>string</td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>scopes</td>
+        <td>array of string</td>
+        <td>scope of the license</td>
+      </tr>
+      <tr>
+        <td>max_record</td>
+        <td>number or string</td>
+        <td>number of record can use or “unlimited”</td>
+      </tr>
+      <tr>
+        <td>valid_from</td>
+        <td>string</td>
+        <td>the time of license become valid</td>
+      </tr>
+      <tr>
+        <td>valid_to</td>
+        <td>string</td>
+        <td>the time of license will be expired</td>
+      </tr>
+      <tr>
+        <td>seat_count</td>
+        <td>number</td>
+        <td>the number of seat</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<h3 id="example-get-infomation-of-commercial-license">Example: Get infomation of commercial license</h3>
+
+<blockquote>
+  <p>Request</p>
+</blockquote>
+
+<pre class="highlight json tab-json--raw"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"getLicenseInfo"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"_auth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abcd"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+  <p>Response</p>
+</blockquote>
+
+<pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"is_commercial"</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"license_id"</span><span class="p">:</span><span class="s2">"d289ccbd-8098-4e19-9827-dbe450196c56"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"max_record"</span><span class="p">:</span><span class="s2">"unlimited"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"recording_count"</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"scopes"</span><span class="p">:[</span><span class="s2">"eeg"</span><span class="p">,</span><span class="s2">"commercial"</span><span class="p">],</span><span class="w">
+      </span><span class="s2">"seat_count"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"valid_from"</span><span class="p">:</span><span class="s2">"2018-06-18T07:00:00+07:00"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"valid_to"</span><span class="p">:</span><span class="s2">"2018-07-18T07:00:00+07:00"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<h2 id="queryheadsets"><code>queryHeadsets</code></h2>
+
+<div class="fullwidth">
+
+  <p>Shows details of any headsets connected to the device via USB wireless dongle, USB cable, or Bluetooth. You can query by id, and specify wildcards for partial matching. You can call this method without an auth token.</p>
+
+  <h3 id="parameters">Parameters</h3>
+
+  <h4 id="request">Request</h4>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Required</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>headsetId</td>
+        <td>string</td>
+        <td>No</td>
+        <td>Headset ID/wildcard</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h4 id="response">Response</h4>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>(entire reponse)</td>
+        <td>array of objects (<a href="#headset-object">headset</a>)</td>
+        <td>All matching headset objects</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>When you use a wildcard :</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Symbol</th>
+        <th>Return heaset type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>INSIGHT-*</td>
+        <td>All Insight headset</td>
+      </tr>
+      <tr>
+        <td>EPOC-*</td>
+        <td>All Epoc headset</td>
+      </tr>
+      <tr>
+        <td>EPOCPLUS-*</td>
+        <td>All Epoc Plus headset</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<h3 id="example-query-all">Example: Query all</h3>
+
+<blockquote>
+  <p>Request</p>
+</blockquote>
+
+<pre class="highlight json tab-json--raw"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"queryHeadsets"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+  <p>Response</p>
+</blockquote>
+
+<pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<h3 id="example-query-by-id">Example: Query by ID</h3>
+
+<blockquote>
+  <p>Request</p>
+</blockquote>
+
+<pre class="highlight json tab-json--raw"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"queryHeadsets"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EPOCPLUS-3B9ADF08"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+  <p>Response</p>
+</blockquote>
+
+<pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This queries a headset with a specific ID.</p>
+
+<h3 id="example-query-by-wildcard-id">Example: Query by wildcard ID</h3>
+
+<blockquote>
+  <p>Request</p>
+</blockquote>
+
+<pre class="highlight json tab-json--raw"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"queryHeadsets"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"INSIGHT-*"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+  <p>Response</p>
+</blockquote>
+
+<pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<h2 id="controlbluetoothheadset"><code>controlBluetoothHeadset</code></h2>
+
+<div class="fullwidth">
+
+  <p>This request is only use for MacOS when you want to connect headset via bluetooth.</p>
+
+  <p>When you call request <a href="#queryheadsets">query headset</a> and get a <a href="#headset-object">headset</a> with <code>status</code> = pending and <code>dongle</code> empty, that mean this is bluetooth headset available in range.</p>
+
+  <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+	</span><span class="s2">"connectedBy"</span><span class="p">:</span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
+	</span><span class="s2">"dongle"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+	</span><span class="s2">"firmware"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+	</span><span class="s2">"id"</span><span class="p">:</span><span class="s2">"INSIGHT-DEADBEEF"</span><span class="p">,</span><span class="w">
+	</span><span class="s2">"label"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="s2">"sensors"</span><span class="p">:[],</span><span class="w">
+	</span><span class="s2">"settings"</span><span class="p">:{</span><span class="w">
+		</span><span class="s2">"eegRate"</span><span class="p">:</span><span class="mi">128</span><span class="p">,</span><span class="w">
+		</span><span class="s2">"eegRes"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+		</span><span class="s2">"memsRate"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+		</span><span class="s2">"memsRes"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+		</span><span class="s2">"mode"</span><span class="p">:</span><span class="s2">""</span><span class="w">
+	</span><span class="p">},</span><span class="w">
+	</span><span class="s2">"status"</span><span class="p">:</span><span class="s2">"pending"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+  <p>You need to call this request to connect with headset.</p>
+
+  <h3 id="parameters">Parameters</h3>
+
+  <h4 id="request">Request</h4>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Required</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>command</td>
+        <td>string</td>
+        <td>Yes</td>
+        <td>must be “connect”,”disconnect” or “refresh”</td>
+      </tr>
+      <tr>
+        <td>headset</td>
+        <td>string</td>
+        <td>No</td>
+        <td>headset ID</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h4 id="response">Response</h4>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>(entire reponse)</td>
+        <td>string</td>
+        <td> </td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<h3 id="example-connect-headset-via-bluetooth">Example: Connect headset via bluetooth</h3>
+
+<blockquote>
+  <p>Request</p>
+</blockquote>
+
+<pre class="highlight json tab-json--raw"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"controlBluetoothHeadset"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"command"</span><span class="p">:</span><span class="w"> </span><span class="s2">"connect"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"headset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"INSIGHT-DEADBEEF"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<!-- ```javascript
+  ws.send({
+    "jsonrpc": "2.0",
+    "method": "controlBluetoothHeadset",
+    "params": {
+      "command": "connect",
+      "headset": "INSIGHT-DEADBEEF"
+    },
+    "id": 1
+  });
+``` -->
+
+<blockquote>
+  <p>Response</p>
+</blockquote>
+
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Connect headset INSIGHT-DEADBEEF success"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<h2 id="createsession"><code>createSession</code></h2>
+
+<div class="fullwidth">
+
+  <p>Creates a new session. Sessions are used to manage live or pre-recorded streams of data from the headset. To use a session successfuly, it must be in the correct state.</p>
+
+  <p>For more information about sessions and state management, see the <a href="#sessions">Sessions</a> section in Concepts.</p>
+
+  <h4 id="request">Request</h4>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Required</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>_auth</td>
+        <td>string (<a href="#auth-token">Auth Token</a>)</td>
+        <td>Yes</td>
+        <td>Auth token</td>
+      </tr>
+      <tr>
+        <td>status</td>
+        <td>string (<a href="#sessions">session state</a>)</td>
+        <td>Yes</td>
+        <td>Initial session status</td>
+      </tr>
+      <tr>
+        <td>headset</td>
+        <td>string</td>
+        <td>No</td>
+        <td>Headset ID link with session (if not set Cortex will link with first headset connected)</td>
+      </tr>
+      <tr>
+        <td>project</td>
+        <td>string</td>
+        <td>No</td>
+        <td>Project name for session</td>
+      </tr>
+      <tr>
+        <td>title</td>
+        <td>string</td>
+        <td>No</td>
+        <td>Title name for session</td>
+      </tr>
+      <tr>
+        <td>subject</td>
+        <td>string</td>
+        <td>No</td>
+        <td>use in the future</td>
+      </tr>
+      <tr>
+        <td>experimentID</td>
+        <td>number</td>
+        <td>No</td>
+        <td>specific experiment id for the application</td>
+      </tr>
+      <tr>
+        <td>sensors</td>
+        <td>array of strings</td>
+        <td>No</td>
+        <td>Set mapping channel for flex headset. The size of array should be 34 (include 2 reference channels and 32 eeg channels). 2 first elements is CMS and DRL. the last channels follow the order LA - LQ and RA - RQ. Set element is empty string if you don’t set mapping for this channel. Example: don’t set mapping for LA -&gt; [“Fz”,”Afz”,”“,…….]</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h5 id="channel-name-is-available-for-flex-headset">Channel name is available for Flex headset:</h5>
+
+  <table>
+    <tbody>
+      <tr>
+        <td>Cz, FCz, Fz, Afz, Fpz, Fp1, AF3, AF7, F9, F7, F5, F3, F1, FC1, C1, C3, FC3, FC5</td>
+      </tr>
+      <tr>
+        <td>FT7, FT9, T7, C5, TP9, TP7, CP5, CP3, CP1, P1, P3, P5, P7, P9, PO9, PO7, PO3, O1</td>
+      </tr>
+      <tr>
+        <td>O9, CPz, Pz, POz, Oz, Iz, O10, O2, PO4, PO8, PO10, P10, P8, P6, P4, P2, CP2, CP4</td>
+      </tr>
+      <tr>
+        <td>CP6, TP8, TP10, C6, T8, FT10, FT8, FC6, FC4, C4, C2, FC2, F2, F4, F6, F8, F10, AF8, AF4, Fp2</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h4 id="response">Response</h4>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>(entire reponse)</td>
+        <td>object (<a href="#session-object">Session</a>)</td>
+        <td>Newly created session object</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<h3 id="example-without-headset-id">Example: Without headset ID</h3>
+
+<blockquote>
+  <p>Request</p>
+</blockquote>
+
+<pre class="highlight json tab-json--raw"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"createSession"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"_auth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"..."</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"open"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+  <p>Response</p>
+</blockquote>
+
+<pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"client"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"headset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"INSIGHT-59683C10"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"af349e3e-c72b-44c9-992c-5ee1905cfdaa"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"license"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"logs"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"markers"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+      </span><span class="s2">"profile"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"started"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-03-23T18:25:08Z"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"opened"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"stopped"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"streams"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+      </span><span class="s2">"subject"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This creates a new session in the “opened” state.</p>
+
+<h3 id="example-with-headset-id-and-status">Example: With headset ID and status</h3>
+
+<blockquote>
+  <p>Request</p>
+</blockquote>
+
+<pre class="highlight json tab-json--raw"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"createSession"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"_auth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"..."</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"headset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"INSIGHT-59683C10"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+  <p>Response</p>
+</blockquote>
+
+<pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"client"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"headset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"INSIGHT-59683C10"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"af349e3e-c72b-44c9-992c-5ee1905cfdaa"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"license"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"logs"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"markers"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+      </span><span class="s2">"profile"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"started"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-03-23T18:25:08Z"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"activated"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"stopped"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"streams"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+      </span><span class="s2">"subject"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>In this example, we choose an existing headset to start a session on, and immediately put it into the “active” state, meaning EEG data is being recorded and can be subscribed to.</p>
+
+<h3 id="with-extra-parameters">With extra parameters</h3>
+
+<blockquote>
+  <p>Request</p>
+</blockquote>
+
+<pre class="highlight json tab-json--raw"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"createSession"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"_auth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abcd"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"project"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Cortex"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test1"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"subject"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cuong"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+  <p>Response</p>
+</blockquote>
+
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"appId"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"headset"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"connectedBy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dongle"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"dongle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6ff"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"firmware"</span><span class="p">:</span><span class="w"> </span><span class="s2">"610"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EPOCPLUS-DEADBEEF"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"sensors"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+      </span><span class="s2">"settings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"eegRate"</span><span class="p">:</span><span class="w"> </span><span class="mi">128</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"eegRes"</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"memsRate"</span><span class="p">:</span><span class="w"> </span><span class="mi">64</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"memsRes"</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EPOCPLUS"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"connected"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9ea68a11-253d-427e-8020-5bc5e4c99a69"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"license"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1ca3fd1c-4ce8-4643-8aa0-28a3255019e8"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"logs"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"recordInfos"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"markers"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"owner"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cortextest"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"profile"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"project"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Cortex"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"recording"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"started"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-01T15:23:33.130641+07:00"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"activated"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"stopped"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"streams"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"subject"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cuong"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test1"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>In this example we set a custom title, project, and subject.</p>
+
+<h3 id="example-create-session-with-flex-headset">Example: Create session with Flex headset</h3>
+
+<blockquote>
+  <p>Request</p>
+</blockquote>
+
+<pre class="highlight json tab-json--raw"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"createSession"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"_auth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"..."</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"headset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EPOCFLEX-DEADBEEF"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"sensors"</span><span class="p">:</span><span class="w">
+        </span><span class="p">[</span><span class="w">
+          </span><span class="s2">"Fz"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"Afz"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"AF3"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"AF4"</span><span class="p">,</span><span class="w">
+          </span><span class="err">.....</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"open"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+  <p>Response</p>
+</blockquote>
+
+<pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"appId"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"headset"</span><span class="p">:</span><span class="w"> 
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"connectedBy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dongle"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"dongle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6ff"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"firmware"</span><span class="p">:</span><span class="w"> </span><span class="s2">"f10"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EPOCFLEX-DEADBEEF"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sensors"</span><span class="p">:</span><span class="w">
+        </span><span class="p">[</span><span class="w">
+          </span><span class="s2">"Fz"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"Afz"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"AF3"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"AF4"</span><span class="p">,</span><span class="w">
+          </span><span class="err">.....</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="s2">"settings"</span><span class="p">:</span><span class="w"> 
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"eegRate"</span><span class="p">:</span><span class="w"> </span><span class="mi">128</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"eegRes"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"memsRate"</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"memsRes"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EPOCFLEX"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"connected"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"af349e3e-c72b-44c9-992c-5ee1905cfdaa"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"license"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"logs"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"markers"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+      </span><span class="s2">"profile"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"started"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-03-23T18:25:08Z"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"opened"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"stopped"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"streams"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+      </span><span class="s2">"subject"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<h2 id="updatesession"><code>updateSession</code></h2>
+
+<div class="fullwidth">
+
+  <p>Updates an existing session. You can use this to start or stop recording from the EEG (by modifying its status) or change the metadata associated with that session.</p>
+
+  <p>For more information about sessions and state management, see the <a href="#sessions">Sessions</a> section in Concepts.</p>
+
+  <h4 id="request">Request</h4>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Required</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>_auth</td>
+        <td>string (<a href="#auth-token">Auth Token</a>)</td>
+        <td>Yes</td>
+        <td>Auth token</td>
+      </tr>
+      <tr>
+        <td>session</td>
+        <td>string</td>
+        <td>No</td>
+        <td>session ID . If this param not set, Cortex will get first session in session list do not close</td>
+      </tr>
+      <tr>
+        <td>status</td>
+        <td>string (<a href="#sessions">session state</a>)</td>
+        <td>Yes</td>
+        <td>New session status</td>
+      </tr>
+      <tr>
+        <td>recordingName</td>
+        <td>string</td>
+        <td>No</td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>recordingNote</td>
+        <td>string</td>
+        <td>No</td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>recordingSubject</td>
+        <td>string</td>
+        <td>No</td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>tags</td>
+        <td>array of strings</td>
+        <td>No</td>
+        <td> </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h4 id="response">Response</h4>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>(entire reponse)</td>
+        <td>object (<a href="#session-object">session</a>)</td>
+        <td>Session object with modifications</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3 id="status-value-can-set-in-updatesession"><code>status</code> value can set in updateSession</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Value</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>“active”</td>
+        <td>Set active for session.</td>
+      </tr>
+      <tr>
+        <td>“close”</td>
+        <td>Close session</td>
+      </tr>
+      <tr>
+        <td>“startRecord”</td>
+        <td>Start a record on this session</td>
+      </tr>
+      <tr>
+        <td>“stopRecord”</td>
+        <td>Stop record on this session</td>
+      </tr>
+      <tr>
+        <td>“addTags”</td>
+        <td>Add tag for this session</td>
+      </tr>
+      <tr>
+        <td>“removeTags”</td>
+        <td>Remove tag for this session</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<h3 id="example-start-a-record">Example: Start a record</h3>
+
+<blockquote>
+  <p>Request</p>
+</blockquote>
+
+<pre class="highlight json tab-json--raw"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"updateSession"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"_auth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"..."</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"startRecord"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"recordingName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"demo"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"recordingNote"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"recordingSubject"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sub 1"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+  <p>Response</p>
+</blockquote>
+
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"appId"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"headset"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"connectedBy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dongle"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"dongle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6ff"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"firmware"</span><span class="p">:</span><span class="w"> </span><span class="s2">"610"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EPOCPLUS-DEADBEEF"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"sensors"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+      </span><span class="s2">"settings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"eegRate"</span><span class="p">:</span><span class="w"> </span><span class="mi">128</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"eegRes"</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"memsRate"</span><span class="p">:</span><span class="w"> </span><span class="mi">64</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"memsRes"</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EPOCPLUS"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"connected"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9ea68a11-253d-427e-8020-5bc5e4c99a69"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"license"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1ca3fd1c-4ce8-4643-8aa0-28a3255019e8"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"logs"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"recordInfos"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"demo"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"notes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test1"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"recordId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c7030f18-4b0f-4a6d-b953-a2b16edd217e"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"sampleMarkerAFF"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="mi">174</span><span class="w">
+          </span><span class="p">],</span><span class="w">
+          </span><span class="s2">"sampleMarkerEEG"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="mi">11140</span><span class="w">
+          </span><span class="p">],</span><span class="w">
+          </span><span class="s2">"startMarkerRecording"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-01T15:25:00.994326+07:00"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"stopMarkerRecording"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"subject"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sub 1"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"markers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"enums"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="s2">"record-1"</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="s2">"events"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">[</span><span class="w">
+            </span><span class="s2">"2017-06-01T15:25:00.976923+07:00"</span><span class="p">,</span><span class="w">
+            </span><span class="mi">1</span><span class="w">
+          </span><span class="p">]</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"demo"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"port"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EmotivProRecording"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"owner"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cortextest"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"profile"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"project"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Cortex"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"recording"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"started"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-01T15:23:33.130641+07:00"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"activated"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"stopped"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"streams"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"subject"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test1"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<h2 id="querysessions"><code>querySessions</code></h2>
+
+<div class="fullwidth">
+
+  <p>Shows details of all sessions on the local machine of current user. Sessions can be queried by any field of <a href="#session-object">Session object</a>.</p>
+
+  <p>For more information about sessions, see the <a href="#sessions">Sessions</a> section in Concepts.</p>
+
+  <h3 id="parameters">Parameters</h3>
+
+  <h4 id="request">Request</h4>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Required</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>_auth</td>
+        <td>string (<a href="#auth-token">Auth Token</a>)</td>
+        <td>Yes</td>
+        <td>Auth token</td>
+      </tr>
+      <tr>
+        <td>query</td>
+        <td>json</td>
+        <td>Yes</td>
+        <td>Query param</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h4 id="response">Response</h4>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>(entire reponse)</td>
+        <td>array of objects (<a href="#session-object">Sessions</a>)</td>
+        <td>All matching session objects</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<h3 id="example-query-all">Example: Query all</h3>
+
+<blockquote>
+  <p>Request</p>
+</blockquote>
+
+<pre class="highlight json tab-json--raw"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"querySessions"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"_auth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abcd"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+  <p>Response</p>
+</blockquote>
+
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"client"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"headset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"INSIGHT-59683C10"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"09fc4d57-a447-45e7-9776-630533ceeaf2"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"license"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7ca047af-0f33-430a-8391-a96eb379de47"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"logs"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"markers"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+      </span><span class="s2">"profile"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"recording"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"started"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-04-03T10:49:02Z"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"opened"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"stopped"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"streams"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+      </span><span class="s2">"subject"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"client"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"headset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"INSIGHT-59683C10"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"e6b578ae-7f75-4b67-97d2-dd47cb00a5a8"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"license"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7ca047af-0f33-430a-8391-a96eb379de47"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"logs"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"markers"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+      </span><span class="s2">"profile"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"recording"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"started"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-04-03T10:01:28Z"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"activated"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"stopped"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"streams"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+      </span><span class="s2">"subject"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This returns all session on the local machine of current user.</p>
+
+<h3 id="example-query-by-status">Example: Query by status</h3>
+
+<blockquote>
+  <p>Request</p>
+</blockquote>
+
+<pre class="highlight json tab-json--raw"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"querySessions"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"_auth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abcd"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"query"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"opened"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+  <p>Response</p>
+</blockquote>
+
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"client"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"headset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"INSIGHT-59683C10"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"09fc4d57-a447-45e7-9776-630533ceeaf2"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"license"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7ca047af-0f33-430a-8391-a96eb379de47"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"logs"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"markers"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+      </span><span class="s2">"profile"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"recording"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"started"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-04-03T10:49:02Z"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"opened"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"stopped"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"streams"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+      </span><span class="s2">"subject"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<h2 id="updatenote"><code>updateNote</code></h2>
+
+<div class="fullwidth">
+
+  <p>If you created a recording on a session. You can edit note for that reocord even the session closed</p>
+
+  <h4 id="request">Request</h4>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Required</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>_auth</td>
+        <td>string (<a href="#auth-token">Auth Token</a>)</td>
+        <td>Yes</td>
+        <td>Auth token</td>
+      </tr>
+      <tr>
+        <td>session</td>
+        <td>string</td>
+        <td>Yes</td>
+        <td>session ID</td>
+      </tr>
+      <tr>
+        <td>note</td>
+        <td>string</td>
+        <td>Yes</td>
+        <td>New record note</td>
+      </tr>
+      <tr>
+        <td>record</td>
+        <td>string</td>
+        <td>Yes</td>
+        <td>Record ID get in the field <code>logs</code> of <a href="#session-object">session object</a></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h4 id="response">Response</h4>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>(entire reponse)</td>
+        <td>object (<a href="#session-object">session</a>)</td>
+        <td>Session object with modifications</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<h3 id="example-update-new-note-for-record-1234-in-session-abcd">Example: Update new note for record “1234” in session “abcd”</h3>
+
+<blockquote>
+  <p>Request</p>
+</blockquote>
+
+<pre class="highlight json tab-json--raw"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"updateNote"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"_auth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"..."</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"session"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abcd"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"note"</span><span class="p">:</span><span class="w"> </span><span class="s2">"new note"</span><span class="w">
+    </span><span class="s2">"record"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<!-- ```javascript
+  ws.send({
+    "jsonrpc": "2.0",
+    "method": "updateNote",
+    "params": {
+    	"_auth": "...",
+    	"session": "abcd",
+    	"note": "new note"
+    	"record": "1234"
+    },
+    "id": 1
+  });
+``` -->
+
+<blockquote>
+  <p>Response</p>
+</blockquote>
+
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+	</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+	</span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+	</span><span class="s2">"result"</span><span class="p">:{</span><span class="w">
+		</span><span class="err">...</span><span class="p">,</span><span class="w">
+		</span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abcd"</span><span class="p">,</span><span class="w">
+		</span><span class="s2">"logs"</span><span class="p">:{</span><span class="w">
+			</span><span class="s2">"recordInfos"</span><span class="p">:[</span><span class="w">
+				</span><span class="p">{</span><span class="w">
+					</span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"test10"</span><span class="p">,</span><span class="w">
+					</span><span class="s2">"notes"</span><span class="p">:</span><span class="s2">"new note"</span><span class="p">,</span><span class="w">
+					</span><span class="s2">"recordId"</span><span class="p">:</span><span class="s2">"1234"</span><span class="p">,</span><span class="w">
+					</span><span class="s2">"sampleMarkerAFF"</span><span class="p">:[</span><span class="w">
+						</span><span class="mi">38</span><span class="p">,</span><span class="w">
+						</span><span class="mi">101</span><span class="w">
+					</span><span class="p">],</span><span class="w">
+					</span><span class="s2">"sampleMarkerEEG"</span><span class="p">:[</span><span class="w">
+						</span><span class="mi">2465</span><span class="p">,</span><span class="w">
+						</span><span class="mi">6465</span><span class="w">
+					</span><span class="p">],</span><span class="w">
+					</span><span class="s2">"startMarkerRecording"</span><span class="p">:</span><span class="s2">"2017-08-03T10:23:15.080335+07:00"</span><span class="p">,</span><span class="w">
+					</span><span class="s2">"stopMarkerRecording"</span><span class="p">:</span><span class="s2">"2017-08-03T10:23:46.560229+07:00"</span><span class="p">,</span><span class="w">
+					</span><span class="s2">"subject"</span><span class="p">:</span><span class="s2">"10"</span><span class="w">
+				</span><span class="p">}</span><span class="w">
+			</span><span class="p">]</span><span class="w">
+		</span><span class="p">},</span><span class="w">
+		</span><span class="err">...</span><span class="w">
+	</span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<h2 id="subscribe"><code>subscribe</code></h2>
+
+<div class="fullwidth">
+
+  <p>Subscribes to a stream of data from a headset. While subscribed, you will receive events asynchronously as data comes in.</p>
+
+  <p>For more information about sessions, see the <a href="#sessions">Sessions</a> section in Concepts, and for a general overview of streams and subscriptions, see <a href="#subscriptions">Subscriptions</a>.</p>
+
+  <h3 id="parameters">Parameters</h3>
+
+  <h4 id="request">Request</h4>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Required</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>_auth</td>
+        <td>string (<a href="#auth-token">Auth Token</a>)</td>
+        <td>Yes</td>
+        <td>Auth token</td>
+      </tr>
+      <tr>
+        <td>streams</td>
+        <td>array of strings (<a href="#streams">stream type</a>)</td>
+        <td>Yes</td>
+        <td>Streams to subscribe to</td>
+      </tr>
+      <tr>
+        <td>session</td>
+        <td>string</td>
+        <td>No</td>
+        <td>session id to subscribe (If this param not set, Cortex will get first session in session list do not close)</td>
+      </tr>
+      <tr>
+        <td>replay</td>
+        <td>boolean</td>
+        <td>No</td>
+        <td>should set <code>false</code></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h4 id="response">Response</h4>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>array of streams info</td>
+        <td>json array</td>
+        <td> </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3 id="stream-info"><code>Stream Info</code></h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>stream name</td>
+        <td>string (<a href="#streams">stream type</a>)</td>
+        <td>Streams to subscribe to</td>
+      </tr>
+      <tr>
+        <td>cols</td>
+        <td>array of strings</td>
+        <td>column name and the order</td>
+      </tr>
+      <tr>
+        <td>sid</td>
+        <td>string</td>
+        <td>subscription id</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<h3 id="example-subscribe-motion-data">Example: subscribe motion data</h3>
+
+<blockquote>
+  <p>Request</p>
+</blockquote>
+
+<pre class="highlight json tab-json--raw"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"subscribe"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"_auth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"myToken"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"streams"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"mot"</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+  <p>Response</p>
+</blockquote>
+
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"mot"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"cols"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="s2">"IMD_COUNTER"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"IMD_GYROX"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"IMD_GYROY"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"IMD_GYROZ"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"IMD_ACCX"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"IMD_ACCY"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"IMD_ACCZ"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"IMD_MAGX"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"IMD_MAGY"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"IMD_MAGZ"</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"sid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3aed5a1e-4bc9-4a9b-bad5-815c403cbc1c"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<h2 id="unsubscribe"><code>unsubscribe</code></h2>
+
+<div class="fullwidth">
+
+  <p>Unsubscribe from a stream previously <a href="#subscribe"><code>subscribe</code></a>d to.</p>
+
+  <p>For more information about sessions, see the <a href="#sessions">Sessions</a> section in Concepts, and for a general overview of streams and subscriptions, see <a href="#subscriptions">Subscriptions</a>.</p>
+
+  <h3 id="parameters">Parameters</h3>
+
+  <h4 id="request">Request</h4>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Required</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>_auth</td>
+        <td>string (<a href="#auth-token">Auth Token</a>)</td>
+        <td>Yes</td>
+        <td>Auth token</td>
+      </tr>
+      <tr>
+        <td>streams</td>
+        <td>array of strings (<a href="#streams">Stream name</a>)</td>
+        <td>Yes</td>
+        <td>Streams to unsubscribe from</td>
+      </tr>
+      <tr>
+        <td>session</td>
+        <td>string</td>
+        <td>No</td>
+        <td>session id to subscribe (If this param not set, Cortex will get first session in session list do not close)</td>
+      </tr>
+      <tr>
+        <td>replay</td>
+        <td>boolean</td>
+        <td>No</td>
+        <td>should set <code>false</code></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h4 id="response">Response</h4>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>(entire reponse)</td>
+        <td>string</td>
+        <td> </td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<h3 id="example-unsubscribe-from-a-live-session">Example: Unsubscribe from a live session</h3>
+
+<blockquote>
+  <p>Request</p>
+</blockquote>
+
+<pre class="highlight json tab-json--raw"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unsubscribe"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"_auth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"myToken"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"streams"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"mot"</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+  <p>Response</p>
+</blockquote>
+
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Unsubscribe stream mot with session af349e3e-c72b-44c9-992c-5ee1905cfdaa success"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<h2 id="injectmarker"><code>injectMarker</code></h2>
+
+<div class="fullwidth">
+
+  <p>Injects a marker into the data stream for a headset. The marker will appear in eeg event of that session.</p>
+
+  <p>For more information about sessions, see the <a href="#sessions">Sessions</a> section in Concepts, and for a general overview of streams and subscriptions, see <a href="#subscriptions">Subscriptions</a>.</p>
+
+  <h3 id="parameters">Parameters</h3>
+
+  <h4 id="request">Request</h4>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Required</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>_auth</td>
+        <td>string (<a href="#auth-token">Auth Token</a>)</td>
+        <td>Yes</td>
+        <td>Auth token</td>
+      </tr>
+      <tr>
+        <td>session</td>
+        <td>string</td>
+        <td>No</td>
+        <td>session id to subscribe (If this param not set, Cortex will get first session in session list do not close)</td>
+      </tr>
+      <tr>
+        <td>label</td>
+        <td>string</td>
+        <td>Yes</td>
+        <td>label name of marker</td>
+      </tr>
+      <tr>
+        <td>value</td>
+        <td>json (number or string)</td>
+        <td>No</td>
+        <td>marker value</td>
+      </tr>
+      <tr>
+        <td>stop</td>
+        <td>json (number or string)</td>
+        <td>No</td>
+        <td>stop value (Only use for marker recording)</td>
+      </tr>
+      <tr>
+        <td>port</td>
+        <td>string</td>
+        <td>No</td>
+        <td>marker source (if not set default value = <code>Software</code>)</td>
+      </tr>
+      <tr>
+        <td>time</td>
+        <td>number</td>
+        <td>Yes</td>
+        <td><a href="https://en.wikipedia.org/wiki/Unix_time">Epoch time</a> Timestamp for marker event</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h4 id="response">Response</h4>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>session object</td>
+        <td>json</td>
+        <td>updated <a href="#session-object">Session object</a></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>A marker is identified by <code>label</code> and <code>port</code> . If you send 2 marker events have same <code>label</code> and <code>port</code>. That mean you send same marker type in twice. Other cases, you send two different marker type. See the details in <a href="#markers">marker concept</a>.</p>
+
+  <p>When you send marker <code>value</code> is string, the marker value in eeg stream is index of this string in array <code>enums</code>. The index start from 1.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Event</th>
+        <th>marker value</th>
+        <th>array <code>enums</code></th>
+        <th><code>IEE_MARKER</code></th>
+        <th><code>IEE_MARKER_HARDWARE</code></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Send 1st marker type A</td>
+        <td>“start”</td>
+        <td>[“start”]</td>
+        <td>1</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>Send 2nd marker type A</td>
+        <td>“stop”</td>
+        <td>[“start”,”stop”]</td>
+        <td>2</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>Send 3rd marker type B</td>
+        <td>“test”</td>
+        <td>[“test”]</td>
+        <td>1</td>
+        <td>2</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<h3 id="example-string-markers">Example: String markers</h3>
+
+<blockquote>
+  <p>Request</p>
+</blockquote>
+
+<pre class="highlight json tab-json--raw"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"injectMarker"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"_auth"</span><span class="p">:</span><span class="w"> </span><span class="s2">".."</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"session"</span><span class="p">:</span><span class="w"> </span><span class="s2">"session-1234"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"record-1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"port"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USB"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"time"</span><span class="p">:</span><span class="w"> </span><span class="mi">123456789</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+  <p>Response</p>
+</blockquote>
+
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="s2">"appId"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"headset"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">...</span><span class="p">},</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"license"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1ca3fd1c-4ce8-4643-8aa0-28a3255019e8"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"logs"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"markers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"enums"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"record-1"</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="s2">"events"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">[</span><span class="w">
+          </span><span class="s2">"2017-06-01T15:25:00.976923+07:00"</span><span class="p">,</span><span class="w">
+          </span><span class="mi">1</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test1"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"port"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USB"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="err">...</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<h3 id="example-numeric-markers">Example: Numeric markers</h3>
+
+<blockquote>
+  <p>Request</p>
+</blockquote>
+
+<pre class="highlight json tab-json--raw"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"injectMarker"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"_auth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"..."</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"session"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abcd"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"port"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Serial port"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"time"</span><span class="p">:</span><span class="w"> </span><span class="mi">123456789</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+  <p>Response</p>
+</blockquote>
+
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="s2">"appId"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"headset"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">...</span><span class="p">},</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abcd"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"license"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1ca3fd1c-4ce8-4643-8aa0-28a3255019e8"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"logs"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"markers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"enums"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+      </span><span class="s2">"events"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">[</span><span class="w">
+          </span><span class="s2">"2017-06-01T15:25:00.976923+07:00"</span><span class="p">,</span><span class="w">
+          </span><span class="mi">10</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test1"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"port"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Serial port"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="err">...</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<h2 id="getdetectioninfo"><code>getDetectionInfo</code></h2>
+
+<div class="fullwidth">
+
+  <p>This request return all useful informations for set up training Mental Command and Facial Expression.</p>
+
+  <h3 id="parameters">Parameters</h3>
+
+  <h4 id="request">Request</h4>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Required</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>detection</td>
+        <td>string</td>
+        <td>Yes</td>
+        <td>must be “mentalCommand” or “facialExpression”</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h4 id="response">Response</h4>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>actions</td>
+        <td>array of strings</td>
+        <td>list action can training</td>
+      </tr>
+      <tr>
+        <td>controls</td>
+        <td>array of strings</td>
+        <td>list control can set</td>
+      </tr>
+      <tr>
+        <td>signature</td>
+        <td>array of strings</td>
+        <td>if the detection is “facialExpression” this show the signature type</td>
+      </tr>
+      <tr>
+        <td>events</td>
+        <td>array of strings</td>
+        <td>list event can receive from <a href="#sys-event">system event</a></td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<h3 id="example-get-detection-info-of-mental-command">Example: Get detection info of Mental Command</h3>
+
+<blockquote>
+  <p>Request</p>
+</blockquote>
+
+<pre class="highlight json tab-json--raw"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"getDetectionInfo"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"detection"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mentalCommand"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<!-- ```javascript
+  ws.send({
+    "jsonrpc": "2.0",
+    "method": "getDetectionInfo",
+    "params": {
+      "detection": "mentalCommand",
+    }
+    "id": 1
+  });
+``` -->
+
+<blockquote>
+  <p>Response</p>
+</blockquote>
+
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"result"</span><span class="p">:</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+    	</span><span class="s2">"actions"</span><span class="p">:[</span><span class="w">
+    		</span><span class="s2">"neutral"</span><span class="p">,</span><span class="w">
+    		</span><span class="s2">"push"</span><span class="p">,</span><span class="w">
+    		</span><span class="s2">"pull"</span><span class="p">,</span><span class="w">
+    		</span><span class="s2">"lift"</span><span class="p">,</span><span class="w">
+    		</span><span class="s2">"drop"</span><span class="p">,</span><span class="w">
+    		</span><span class="s2">"left"</span><span class="p">,</span><span class="w">
+    		</span><span class="s2">"right"</span><span class="p">,</span><span class="w">
+    		</span><span class="s2">"rotateLeft"</span><span class="p">,</span><span class="w">
+    		</span><span class="s2">"rotateRight"</span><span class="p">,</span><span class="w">
+    		</span><span class="s2">"rotateClockwise"</span><span class="p">,</span><span class="w">
+    		</span><span class="s2">"rotateCounterClockwise"</span><span class="p">,</span><span class="w">
+    		</span><span class="s2">"rotateForwards"</span><span class="p">,</span><span class="w">
+    		</span><span class="s2">"rotateReverse"</span><span class="p">,</span><span class="w">
+    		</span><span class="s2">"disappear"</span><span class="w">
+    	</span><span class="p">],</span><span class="w">
+    	</span><span class="s2">"controls"</span><span class="p">:[</span><span class="w">
+    		</span><span class="s2">"start"</span><span class="p">,</span><span class="w">
+    		</span><span class="s2">"accept"</span><span class="p">,</span><span class="w">
+    		</span><span class="s2">"reject"</span><span class="p">,</span><span class="w">
+    		</span><span class="s2">"erase"</span><span class="p">,</span><span class="w">
+    		</span><span class="s2">"reset"</span><span class="w">
+    	</span><span class="p">],</span><span class="w">
+    	</span><span class="s2">"events"</span><span class="p">:[</span><span class="w">
+    		</span><span class="s2">"MC_NoEvent"</span><span class="p">,</span><span class="w">
+    		</span><span class="s2">"MC_Started"</span><span class="p">,</span><span class="w">
+    		</span><span class="s2">"MC_Succeeded"</span><span class="p">,</span><span class="w">
+    		</span><span class="s2">"MC_Failed"</span><span class="p">,</span><span class="w">
+    		</span><span class="s2">"MC_Completed"</span><span class="p">,</span><span class="w">
+    		</span><span class="s2">"MC_DataErased"</span><span class="p">,</span><span class="w">
+    		</span><span class="s2">"MC_Rejected"</span><span class="p">,</span><span class="w">
+    		</span><span class="s2">"MC_Reset"</span><span class="p">,</span><span class="w">
+    		</span><span class="s2">"MC_AutoSamplingNeutralCompleted"</span><span class="p">,</span><span class="w">
+    		</span><span class="s2">"MC_SignatureUpdated"</span><span class="w">
+    	</span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<h2 id="training"><code>training</code></h2>
+
+<div class="fullwidth">
+
+  <p>Set up training for Mental Comand or Facial Expression</p>
+
+  <h3 id="parameters-1">Parameters</h3>
+
+  <h4 id="request-1">Request</h4>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Required</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>_auth</td>
+        <td>string (<a href="#auth-token">Auth Token</a>)</td>
+        <td>Yes</td>
+        <td>Auth token</td>
+      </tr>
+      <tr>
+        <td>detection</td>
+        <td>string</td>
+        <td>Yes</td>
+        <td>The name of detection (“mentalCommand” or “facialExpression”)</td>
+      </tr>
+      <tr>
+        <td>session</td>
+        <td>string</td>
+        <td>No</td>
+        <td>session ID . If this param not set, Cortex will get first session in session list do not close</td>
+      </tr>
+      <tr>
+        <td>action</td>
+        <td>string</td>
+        <td>Yes</td>
+        <td>Action will train. Get from the field <code>actions</code> in response of request <a href="#getdetectioninfo">get detection info</a></td>
+      </tr>
+      <tr>
+        <td>status</td>
+        <td>string</td>
+        <td>Yes</td>
+        <td>control for action. Get from the field <code>controls</code> of request <a href="#getdetectioninfo">get detection info</a></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h4 id="response-1">Response</h4>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>(entire reponse)</td>
+        <td>string</td>
+        <td> </td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<h3 id="example-set-training-start-for-action-neutral-of-mental-command">Example: Set training “start” for action “neutral” of Mental Command</h3>
+
+<blockquote>
+  <p>Request</p>
+</blockquote>
+
+<pre class="highlight json tab-json--raw"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"training"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"_auth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abcd"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"detection"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mentalCommand"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"session"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"neutral"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"start"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<!-- ```javascript
+  ws.send({
+    "jsonrpc": "2.0",
+    "method": "training",
+    "params": {
+    	"_auth": "abcd",
+    	"detection": "mentalCommand",
+    	"session": "1234",
+    	"action": "neutral",
+    	"status": "start"
+    },
+    "id": 1
+  });
+``` -->
+
+<blockquote>
+  <p>Response</p>
+</blockquote>
+
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Set up training successfully for action neutral with status start"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<h2 id="gettrainingtime"><code>getTrainingTime</code></h2>
+
+<div class="fullwidth">
+
+  <p>Get training time during a training</p>
+
+  <h3 id="parameters-2">Parameters</h3>
+
+  <h4 id="request-2">Request</h4>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Required</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>_auth</td>
+        <td>string (<a href="#auth-token">Auth Token</a>)</td>
+        <td>Yes</td>
+        <td>Auth token</td>
+      </tr>
+      <tr>
+        <td>detection</td>
+        <td>string</td>
+        <td>Yes</td>
+        <td>The name of detection (“mentalCommand” or “facialExpression”)</td>
+      </tr>
+      <tr>
+        <td>session</td>
+        <td>string</td>
+        <td>YeS</td>
+        <td>session ID</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h4 id="response-2">Response</h4>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>(entire reponse)</td>
+        <td>number</td>
+        <td> </td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<h3 id="example-get-training-time-of-mental-command">Example: Get Training time of Mental Command</h3>
+
+<blockquote>
+  <p>Request</p>
+</blockquote>
+
+<pre class="highlight json tab-json--raw"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"getTrainingTime"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"_auth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abcd"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"detection"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mentalCommand"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"session"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234"</span><span class="p">,</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+  <p>Response</p>
+</blockquote>
+
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="mi">8000</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<h2 id="gettrainedsignatureactions"><code>getTrainedSignatureActions</code></h2>
+
+<div class="fullwidth">
+
+  <p>Get trained actions in a profile file</p>
+
+  <h3 id="parameters-3">Parameters</h3>
+
+  <h4 id="request-3">Request</h4>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Required</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>_auth</td>
+        <td>string (<a href="#auth-token">Auth Token</a>)</td>
+        <td>Yes</td>
+        <td>Auth token</td>
+      </tr>
+      <tr>
+        <td>detection</td>
+        <td>string</td>
+        <td>Yes</td>
+        <td>The name of detection (“mentalCommand” or “facialExpression”)</td>
+      </tr>
+      <tr>
+        <td>session</td>
+        <td>string</td>
+        <td>No</td>
+        <td>session ID. If session not set that mean just read info from local profile file</td>
+      </tr>
+      <tr>
+        <td>profile</td>
+        <td>string</td>
+        <td>Yes</td>
+        <td>profile name</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h4 id="response-3">Response</h4>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>trained_actions</td>
+        <td>array of json object</td>
+        <td>action name and number of times training</td>
+      </tr>
+      <tr>
+        <td>total_times_training</td>
+        <td>number</td>
+        <td>total number of times training and never reset. This value is incremented each times call start training successful for any action.</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<h3 id="example">Example:</h3>
+
+<blockquote>
+  <p>Request</p>
+</blockquote>
+
+<pre class="highlight json tab-json--raw"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"getTrainedSignatureActions"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"_auth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abcd"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"detection"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mentalCommand"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"session"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"profile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+  <p>Response</p>
+</blockquote>
+
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> 
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"trained_actions"</span><span class="p">:</span><span class="w">
+      </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"push"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"times"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pull"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"times"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"total_times_training"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">  
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<h2 id="mentalcommandgetskillrating"><code>mentalCommandGetSkillRating</code></h2>
+
+<div class="fullwidth">
+
+  <p>Get skill rating of action or overall skill rating</p>
+
+  <h3 id="parameters-4">Parameters</h3>
+
+  <h4 id="request-4">Request</h4>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Required</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>_auth</td>
+        <td>string (<a href="#auth-token">Auth Token</a>)</td>
+        <td>Yes</td>
+        <td>Auth token</td>
+      </tr>
+      <tr>
+        <td>action</td>
+        <td>string</td>
+        <td>No</td>
+        <td>Action will get. Get from the field <code>actions</code> in response of request <a href="#getdetectioninfo">get detection info</a> . if <code>action</code> not set that mean get overall skill rating</td>
+      </tr>
+      <tr>
+        <td>session</td>
+        <td>string</td>
+        <td>No</td>
+        <td>session ID. If <code>session</code> not set that mean just read info from local profile file</td>
+      </tr>
+      <tr>
+        <td>profile</td>
+        <td>string</td>
+        <td>Yes</td>
+        <td>profile name</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h4 id="response-4">Response</h4>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>(entire reponse)</td>
+        <td>number</td>
+        <td> </td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<h3 id="example-get-skill-rating-of-action-push">Example: Get skill rating of action <code>push</code></h3>
+
+<blockquote>
+  <p>Request</p>
+</blockquote>
+
+<pre class="highlight json tab-json--raw"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mentalCommandGetSkillRating"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"_auth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abcd"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"push"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"session"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"profile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+  <p>Response</p>
+</blockquote>
+
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<h2 id="mentalcommandactionsensitivity"><code>mentalCommandActionSensitivity</code></h2>
+
+<div class="fullwidth">
+
+  <p>Get senvitivity of activated actions</p>
+
+  <h3 id="parameters-5">Parameters</h3>
+
+  <h4 id="request-5">Request</h4>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Required</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>_auth</td>
+        <td>string (<a href="#auth-token">Auth Token</a>)</td>
+        <td>Yes</td>
+        <td>Auth token</td>
+      </tr>
+      <tr>
+        <td>session</td>
+        <td>string</td>
+        <td>No</td>
+        <td>session ID. If <code>session</code> not set that mean just read info from local profile file</td>
+      </tr>
+      <tr>
+        <td>profile</td>
+        <td>string</td>
+        <td>Yes</td>
+        <td>profile name</td>
+      </tr>
+      <tr>
+        <td>status</td>
+        <td>string</td>
+        <td>Yes</td>
+        <td>Shoule be “set” or “get”</td>
+      </tr>
+      <tr>
+        <td>values</td>
+        <td>array of numbers with 4 elements</td>
+        <td>No</td>
+        <td>Depend on the order of element will set senvitivity for activated action 1 - 4, range of value (min: 1, max: 10)</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h4 id="response-5">Response</h4>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>(entire reponse)</td>
+        <td>string or array of number depend on the request <code>set</code> or <code>get</code></td>
+        <td> </td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<h3 id="example-get-senvitivity-of-activated-actions">Example: Get senvitivity of activated actions</h3>
+
+<blockquote>
+  <p>Request</p>
+</blockquote>
+
+<pre class="highlight json tab-json--raw"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mentalCommandActionSensitivity"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"_auth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abcd"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"get"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"session"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"profile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+  <p>Response</p>
+</blockquote>
+
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<h2 id="mentalcommandactionlevel"><code>mentalCommandActionLevel</code></h2>
+
+<div class="fullwidth">
+
+  <p>Get/Set the overall sensitivity for all MentalCommand actions</p>
+
+  <h3 id="parameters-6">Parameters</h3>
+
+  <h4 id="request-6">Request</h4>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Required</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>_auth</td>
+        <td>string (<a href="#auth-token">Auth Token</a>)</td>
+        <td>Yes</td>
+        <td>Auth token</td>
+      </tr>
+      <tr>
+        <td>session</td>
+        <td>string</td>
+        <td>No</td>
+        <td>session ID. If <code>session</code> not set that mean just read info from local profile file</td>
+      </tr>
+      <tr>
+        <td>profile</td>
+        <td>string</td>
+        <td>Yes</td>
+        <td>profile name</td>
+      </tr>
+      <tr>
+        <td>status</td>
+        <td>string</td>
+        <td>Yes</td>
+        <td>Shoule be “set” or “get”</td>
+      </tr>
+      <tr>
+        <td>level</td>
+        <td>number</td>
+        <td>No</td>
+        <td>value of the overall sensitivity (lowest: 1, highest: 7)</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h4 id="response-6">Response</h4>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>(entire reponse)</td>
+        <td>string or number depend on the request <code>set</code> or <code>get</code></td>
+        <td> </td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<h3 id="example-get-senvitivity-of-activated-actions-1">Example: Get senvitivity of activated actions</h3>
+
+<blockquote>
+  <p>Request</p>
+</blockquote>
+
+<pre class="highlight json tab-json--raw"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mentalCommandActionLevel"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"_auth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abcd"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"get"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"session"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"profile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+  <p>Response</p>
+</blockquote>
+
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<h2 id="mentalcommandactiveaction"><code>mentalCommandActiveAction</code></h2>
+
+<div class="fullwidth">
+
+  <p>Get/Set active MentalCommand actions</p>
+
+  <h3 id="parameters-7">Parameters</h3>
+
+  <h4 id="request-7">Request</h4>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Required</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>_auth</td>
+        <td>string (<a href="#auth-token">Auth Token</a>)</td>
+        <td>Yes</td>
+        <td>Auth token</td>
+      </tr>
+      <tr>
+        <td>session</td>
+        <td>string</td>
+        <td>No</td>
+        <td>session ID. If <code>session</code> not set that mean just read info from local profile file</td>
+      </tr>
+      <tr>
+        <td>profile</td>
+        <td>string</td>
+        <td>Yes</td>
+        <td>profile name</td>
+      </tr>
+      <tr>
+        <td>status</td>
+        <td>string</td>
+        <td>Yes</td>
+        <td>Shoule be “set” or “get”</td>
+      </tr>
+      <tr>
+        <td>actions</td>
+        <td>array of strings</td>
+        <td>No</td>
+        <td>List of action will active. Get from the field <code>actions</code> in response of request <a href="#getdetectioninfo">get detection info</a></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h4 id="response-7">Response</h4>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>(entire reponse)</td>
+        <td>string or array of strings depend on the request <code>set</code> or <code>get</code></td>
+        <td> </td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<h3 id="example-1">Example:</h3>
+
+<blockquote>
+  <p>Request</p>
+</blockquote>
+
+<pre class="highlight json tab-json--raw"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mentalCommandActiveAction"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"_auth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abcd"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"get"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"session"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"profile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+  <p>Response</p>
+</blockquote>
+
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"pull"</span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<h2 id="facialexpressionsignaturetype"><code>facialExpressionSignatureType</code></h2>
+
+<div class="fullwidth">
+
+  <p>Get/Set signature type for Facial Expression</p>
+
+  <h3 id="parameters-8">Parameters</h3>
+
+  <h4 id="request-8">Request</h4>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Required</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>_auth</td>
+        <td>string (<a href="#auth-token">Auth Token</a>)</td>
+        <td>Yes</td>
+        <td>Auth token</td>
+      </tr>
+      <tr>
+        <td>session</td>
+        <td>string</td>
+        <td>No</td>
+        <td>session ID. If <code>session</code> not set that mean just read info from local profile file</td>
+      </tr>
+      <tr>
+        <td>profile</td>
+        <td>string</td>
+        <td>Yes</td>
+        <td>profile name</td>
+      </tr>
+      <tr>
+        <td>status</td>
+        <td>string</td>
+        <td>Yes</td>
+        <td>Shoule be “set” or “get”</td>
+      </tr>
+      <tr>
+        <td>signature</td>
+        <td>string</td>
+        <td>No</td>
+        <td>Signature type will apply for Facial Expression. Get from the field <code>signature</code> in response of request <a href="#getdetectioninfo">get detection info</a></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h4 id="response-8">Response</h4>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>currentSig</td>
+        <td>string</td>
+        <td>current signature is using</td>
+      </tr>
+      <tr>
+        <td>availableSig</td>
+        <td>array of strings</td>
+        <td>list available signature can apply</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<h3 id="example-get-facial-expression-signature-type">Example: Get facial expression signature type</h3>
+
+<blockquote>
+  <p>Request</p>
+</blockquote>
+
+<pre class="highlight json tab-json--raw"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"facialExpressionSignatureType"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"_auth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abcd"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"get"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"session"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"profile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+  <p>Response</p>
+</blockquote>
+
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"currentSig"</span><span class="p">:</span><span class="s2">"universal"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"availableSig"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"universal"</span><span class="p">,</span><span class="s2">"trained"</span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<h2 id="facialexpressionthreshold"><code>facialExpressionThreshold</code></h2>
+
+<div class="fullwidth">
+
+  <p>Get/Set threshold for FacialExpression</p>
+
+  <h3 id="parameters-9">Parameters</h3>
+
+  <h4 id="request-9">Request</h4>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Required</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>_auth</td>
+        <td>string (<a href="#auth-token">Auth Token</a>)</td>
+        <td>Yes</td>
+        <td>Auth token</td>
+      </tr>
+      <tr>
+        <td>session</td>
+        <td>string</td>
+        <td>No</td>
+        <td>session ID. If <code>session</code> not set that mean just read info from local profile file</td>
+      </tr>
+      <tr>
+        <td>profile</td>
+        <td>string</td>
+        <td>Yes</td>
+        <td>profile name</td>
+      </tr>
+      <tr>
+        <td>status</td>
+        <td>string</td>
+        <td>Yes</td>
+        <td>Shoule be “set” or “get”</td>
+      </tr>
+      <tr>
+        <td>action</td>
+        <td>string</td>
+        <td>Yes</td>
+        <td>Action will use. Get from the field <code>actions</code> in response of request <a href="#getdetectioninfo">get detection info</a></td>
+      </tr>
+      <tr>
+        <td>value</td>
+        <td>number</td>
+        <td>No</td>
+        <td>threshold value will set (min: 0, max: 1000)</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h4 id="response-9">Response</h4>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>(entire reponse)</td>
+        <td>string</td>
+        <td> </td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<h3 id="example-get-threshold-value-of-action-surprise">Example: Get threshold value of action <code>surprise</code></h3>
+
+<blockquote>
+  <p>Request</p>
+</blockquote>
+
+<pre class="highlight json tab-json--raw"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"facialExpressionThreshold"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"_auth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abcd"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"get"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"session"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"profile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test"</span><span class="w">
+    </span><span class="s2">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"surprise"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+  <p>Response</p>
+</blockquote>
+
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<h2 id="mentalcommandtrainingthreshold"><code>mentalCommandTrainingThreshold</code></h2>
+
+<div class="fullwidth">
+
+  <p>Get threshold of MentalCommand</p>
+
+  <h3 id="parameters-10">Parameters</h3>
+
+  <h4 id="request-10">Request</h4>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Required</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>_auth</td>
+        <td>string (<a href="#auth-token">Auth Token</a>)</td>
+        <td>Yes</td>
+        <td>Auth token</td>
+      </tr>
+      <tr>
+        <td>session</td>
+        <td>string</td>
+        <td>No</td>
+        <td>session ID. If <code>session</code> not set that mean just read info from local profile file</td>
+      </tr>
+      <tr>
+        <td>profile</td>
+        <td>string</td>
+        <td>Yes</td>
+        <td>profile name</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h4 id="response-10">Response</h4>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>currentThreshold</td>
+        <td>number</td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>lastTrainingScore</td>
+        <td>number</td>
+        <td> </td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<h3 id="example-2">Example:</h3>
+
+<blockquote>
+  <p>Request</p>
+</blockquote>
+
+<pre class="highlight json tab-json--raw"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mentalCommandTrainingThreshold"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"_auth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abcd"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"profile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+  <p>Response</p>
+</blockquote>
+
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"currentThreshold"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.833333313465118</span><span class="w">
+    </span><span class="s2">"lastTrainingScore"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<h2 id="mentalcommandbrainmap"><code>mentalCommandBrainMap</code></h2>
+
+<div class="fullwidth">
+
+  <p>Get Brain Map of MentalCommand training action</p>
+
+  <h3 id="parameters-11">Parameters</h3>
+
+  <h4 id="request-11">Request</h4>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Required</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>_auth</td>
+        <td>string (<a href="#auth-token">Auth Token</a>)</td>
+        <td>Yes</td>
+        <td>Auth token</td>
+      </tr>
+      <tr>
+        <td>session</td>
+        <td>string</td>
+        <td>No</td>
+        <td>session ID. If <code>session</code> not set that mean just read info from local profile file</td>
+      </tr>
+      <tr>
+        <td>profile</td>
+        <td>string</td>
+        <td>Yes</td>
+        <td>profile name</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h4 id="response-11">Response</h4>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>action</td>
+        <td>string</td>
+        <td>traning action</td>
+      </tr>
+      <tr>
+        <td>coordinates</td>
+        <td>json array</td>
+        <td>first element is x coordinate, second is y coordinate (range of value from -1 to 1)</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<h3 id="example-3">Example:</h3>
+
+<blockquote>
+  <p>Request</p>
+</blockquote>
+
+<pre class="highlight json tab-json--raw"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mentalCommandBrainMap"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"_auth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abcd"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"profile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+  <p>Response</p>
+</blockquote>
+
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"neutral"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"coordinates"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"push"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"coordinates"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<h2 id="queryprofile"><code>queryProfile</code></h2>
+
+<div class="fullwidth">
+
+  <p>Get all trainining profile of specific user on the local machine</p>
+
+  <h3 id="parameters">Parameters</h3>
+
+  <h4 id="request">Request</h4>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Required</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>_auth</td>
+        <td>string (<a href="#auth-token">Auth Token</a>)</td>
+        <td>Yes</td>
+        <td>Auth token</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h4 id="response">Response</h4>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>(entire reponse)</td>
+        <td>array of json object</td>
+        <td>All profiles of user</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<h3 id="example-query-profile">Example: Query profile</h3>
+
+<blockquote>
+  <p>Request</p>
+</blockquote>
+
+<pre class="highlight json tab-json--raw"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"queryProfile"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"_auth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abcd"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<!-- ```javascript
+  ws.send({
+    "jsonrpc": "2.0",
+    "method": "queryProfile",
+    "params": {
+      "_auth": "abcd"
+    },
+    "id": 1
+  });
+``` -->
+
+<blockquote>
+  <p>Response</p>
+</blockquote>
+
+<pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> 
+    </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"name"</span><span class="p">:</span><span class="err">test</span><span class="mi">1</span><span class="s2">",
+          "</span><span class="err">meta</span><span class="s2">":
+          {
+            "</span><span class="err">creation_time</span><span class="s2">":"</span><span class="mi">2017-12-18</span><span class="err">T</span><span class="mi">14</span><span class="p">:</span><span class="mi">13</span><span class="p">:</span><span class="mf">14.288547</span><span class="err">+</span><span class="mi">07</span><span class="p">:</span><span class="mi">00</span><span class="s2">"
+          }
+      },
+      {
+          "</span><span class="err">name</span><span class="s2">":test2"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"meta"</span><span class="p">:</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"creation_time"</span><span class="p">:</span><span class="s2">"2017-11-18T15:17:14.288547+07:00"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<h2 id="setupprofile"><code>setupProfile</code></h2>
+
+<div class="fullwidth">
+
+  <p>This method help you work with training profile. You can save training data to new profile, load profile, upload profile to Emotiv’s server ….</p>
+
+  <h3 id="parameters-1">Parameters</h3>
+
+  <h4 id="request-1">Request</h4>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Required</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>_auth</td>
+        <td>string (<a href="#auth-token">Auth Token</a>)</td>
+        <td>Yes</td>
+        <td>Auth token</td>
+      </tr>
+      <tr>
+        <td>headset</td>
+        <td>string</td>
+        <td>No</td>
+        <td>headset ID. This field is required when load or save profile</td>
+      </tr>
+      <tr>
+        <td>profile</td>
+        <td>string</td>
+        <td>Yes</td>
+        <td>profile name</td>
+      </tr>
+      <tr>
+        <td>newProfileName</td>
+        <td>string</td>
+        <td>No</td>
+        <td>new profile name when you want to rename profile</td>
+      </tr>
+      <tr>
+        <td>status</td>
+        <td>string</td>
+        <td>Yes</td>
+        <td>See below</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>The <code>status</code> is action Cortex will do on profile:</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Value</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>“create”</td>
+        <td>create new training profile</td>
+      </tr>
+      <tr>
+        <td>“save”</td>
+        <td>save current training data to profile</td>
+      </tr>
+      <tr>
+        <td>“load”</td>
+        <td>load training data from profile</td>
+      </tr>
+      <tr>
+        <td>“unload”</td>
+        <td>remove training data of one profile in Cortex</td>
+      </tr>
+      <tr>
+        <td>“rename”</td>
+        <td>rename training profile file</td>
+      </tr>
+      <tr>
+        <td>“delete”</td>
+        <td>remove training profile on the local machine</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h4 id="response-1">Response</h4>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>(entire reponse)</td>
+        <td>string</td>
+        <td> </td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<h3 id="example-create-new-profile">Example: create new profile</h3>
+
+<blockquote>
+  <p>Request</p>
+</blockquote>
+
+<pre class="highlight json tab-json--raw"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"setupProfile"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"_auth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abcd"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"headset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"INSIGHT-DEADBEEF"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"profile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"create"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<!-- ```javascript
+  ws.send({
+    "jsonrpc": "2.0",
+    "method": "setupProfile",
+    "params": {
+      "_auth": "abcd",
+      "headset": "INSIGHT-DEADBEEF",
+      "profile": "test",
+      "status": "create"
+    },
+    "id": 1
+  });
+``` -->
+
+<blockquote>
+  <p>Response</p>
+</blockquote>
+
+<pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="s2">"create profile test successfully"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<h2 id="getcurrentprofile"><code>getCurrentProfile</code></h2>
+
+<div class="fullwidth">
+
+  <p>This method help you check have any profile linking with a specific headset</p>
+
+  <h3 id="parameters-2">Parameters</h3>
+
+  <h4 id="request-2">Request</h4>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Required</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>_auth</td>
+        <td>string (<a href="#auth-token">Auth Token</a>)</td>
+        <td>Yes</td>
+        <td>Auth token</td>
+      </tr>
+      <tr>
+        <td>headset</td>
+        <td>string</td>
+        <td>Yes</td>
+        <td>headset ID.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h4 id="response-2">Response</h4>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>json</td>
+        <td>string</td>
+        <td>return null if does not have any profile.</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<h3 id="example">Example</h3>
+
+<blockquote>
+  <p>Request</p>
+</blockquote>
+
+<pre class="highlight json tab-json--raw"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"getCurrentProfile"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"_auth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abcd"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"headset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"INSIGHT-DEADBEEF"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+  <p>Response</p>
+</blockquote>
+
+<pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test1"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<h2 id="decryptdata"><code>decryptData</code></h2>
+
+<div class="fullwidth">
+
+  <p>Decrypt file data recorded by extender. After Cortex finishes decrypt file will appear a warning message</p>
+
+  <h4 id="request">Request</h4>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Required</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>_auth</td>
+        <td>string (<a href="#auth-token">Auth Token</a>)</td>
+        <td>Yes</td>
+        <td>Auth token</td>
+      </tr>
+      <tr>
+        <td>folderPath</td>
+        <td>string</td>
+        <td>Yes</td>
+        <td>The folder contains data file</td>
+      </tr>
+      <tr>
+        <td>outputPath</td>
+        <td>string</td>
+        <td>No</td>
+        <td>The output folder will store decrypted files. If not set, Cortex will store same input folder.</td>
+      </tr>
+      <tr>
+        <td>license</td>
+        <td>string</td>
+        <td>No</td>
+        <td>License ID of user. If not set, Cortex will use License ID from (<a href="#auth-token">Auth Token</a>).</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h4 id="response">Response</h4>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>(entire reponse)</td>
+        <td>string</td>
+        <td> </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h4 id="warning">Warning</h4>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>code</td>
+        <td>number</td>
+        <td>warning code (4: Succes, 5: Fail)</td>
+      </tr>
+      <tr>
+        <td>message</td>
+        <td>string</td>
+        <td> </td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<h3 id="example-decrypt-data">Example: Decrypt data</h3>
+
+<blockquote>
+  <p>Request</p>
+</blockquote>
+
+<pre class="highlight json tab-json--raw"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"decryptData"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"_auth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abcd"</span><span class="w">
+    </span><span class="s2">"folderPath"</span><span class="p">:</span><span class="s2">"..."</span><span class="w">
+    </span><span class="s2">"outputPath"</span><span class="p">:</span><span class="s2">".."</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+  <p>Response</p>
+</blockquote>
+
+<pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cortex has started the process of extract the data"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+  <p>Warning</p>
+</blockquote>
+
+<pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"warning"</span><span class="p">:</span><span class="w"> 
+    </span><span class="p">{</span><span class="w">
+    	</span><span class="s2">"code"</span><span class="p">:</span><span class="mi">4</span><span class="w">
+    	</span><span class="s2">"message"</span><span class="p">:</span><span class="s2">"Export data from path ... to path ... successful"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<h2 id="configmapping"><code>configMapping</code></h2>
+
+<div class="fullwidth">
+
+  <p>this method helps user create and save mapping channel for Flex headset</p>
+
+  <h4 id="request">Request</h4>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Required</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>_auth</td>
+        <td>string (<a href="#auth-token">Auth Token</a>)</td>
+        <td>Yes</td>
+        <td>Auth token</td>
+      </tr>
+      <tr>
+        <td>status</td>
+        <td>string</td>
+        <td>Yes</td>
+        <td>user operation. status can be “get”, “create”, “read”, “update”, “delete”</td>
+      </tr>
+      <tr>
+        <td>uuid</td>
+        <td>string</td>
+        <td>No</td>
+        <td>uuid of config. Set this value when read/update/delete config</td>
+      </tr>
+      <tr>
+        <td>name</td>
+        <td>string</td>
+        <td>No</td>
+        <td>name of config. Set this value when create/update mapping</td>
+      </tr>
+      <tr>
+        <td>mapping</td>
+        <td>object</td>
+        <td>No</td>
+        <td>mapping value of config. Set this value when create/update config</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h4 id="mapping-format">Mapping format</h4>
+
+  <p>Mapping is json object with 32 key. The value of key in Channel column</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Channel</th>
+        <th>Sensor</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>“LA”</td>
+        <td>“AF3”</td>
+      </tr>
+      <tr>
+        <td>“LB”</td>
+        <td>“AF4”</td>
+      </tr>
+      <tr>
+        <td>…….</td>
+        <td>……</td>
+      </tr>
+      <tr>
+        <td>“RQ”</td>
+        <td>“O1”</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h4 id="response">Response</h4>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>(entire reponse)</td>
+        <td>object or string</td>
+        <td> </td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<h3 id="example-create-mapping">Example: Create mapping</h3>
+
+<blockquote>
+  <p>Request</p>
+</blockquote>
+
+<pre class="highlight json tab-json--raw"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"configMapping"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"_auth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abcd"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"create"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"config1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"mapping"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">...</span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+  <p>Response</p>
+</blockquote>
+
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Config mapping channel successful"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
