@@ -1,0 +1,13 @@
+K:\GitHub\Emotiv_Game_Unity\cortex-v2-example-master\csharp\CortexAccess\obj\Debug\CortexAccess.csproj.CoreCompileInputs.cache
+K:\GitHub\Emotiv_Game_Unity\cortex-v2-example-master\csharp\CortexAccess\bin\Debug\CortexAccess.dll.config
+K:\GitHub\Emotiv_Game_Unity\cortex-v2-example-master\csharp\CortexAccess\bin\Debug\CortexAccess.dll
+K:\GitHub\Emotiv_Game_Unity\cortex-v2-example-master\csharp\CortexAccess\bin\Debug\CortexAccess.pdb
+K:\GitHub\Emotiv_Game_Unity\cortex-v2-example-master\csharp\CortexAccess\bin\Debug\Newtonsoft.Json.dll
+K:\GitHub\Emotiv_Game_Unity\cortex-v2-example-master\csharp\CortexAccess\bin\Debug\SuperSocket.ClientEngine.dll
+K:\GitHub\Emotiv_Game_Unity\cortex-v2-example-master\csharp\CortexAccess\bin\Debug\WebSocket4Net.dll
+K:\GitHub\Emotiv_Game_Unity\cortex-v2-example-master\csharp\CortexAccess\bin\Debug\Newtonsoft.Json.xml
+K:\GitHub\Emotiv_Game_Unity\cortex-v2-example-master\csharp\CortexAccess\obj\Debug\CortexAccess.csproj.CopyComplete
+K:\GitHub\Emotiv_Game_Unity\cortex-v2-example-master\csharp\CortexAccess\obj\Debug\CortexAccess.dll
+K:\GitHub\Emotiv_Game_Unity\cortex-v2-example-master\csharp\CortexAccess\obj\Debug\CortexAccess.pdb
+K:\GitHub\Emotiv_Game_Unity\cortex-v2-example-master\csharp\CortexAccess\bin\Debug\SuperSocket.ProtoBase.dll
+K:\GitHub\Emotiv_Game_Unity\cortex-v2-example-master\csharp\CortexAccess\bin\Debug\SuperSocket.ProtoBase.xml

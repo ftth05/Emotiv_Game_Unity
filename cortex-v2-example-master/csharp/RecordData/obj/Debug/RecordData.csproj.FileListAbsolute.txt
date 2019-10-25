@@ -1,0 +1,17 @@
+K:\GitHub\Emotiv_Game_Unity\cortex-v2-example-master\csharp\RecordData\obj\Debug\RecordData.csproj.CoreCompileInputs.cache
+K:\GitHub\Emotiv_Game_Unity\cortex-v2-example-master\csharp\RecordData\bin\Debug\RecordData.exe.config
+K:\GitHub\Emotiv_Game_Unity\cortex-v2-example-master\csharp\RecordData\bin\Debug\RecordData.exe
+K:\GitHub\Emotiv_Game_Unity\cortex-v2-example-master\csharp\RecordData\bin\Debug\RecordData.pdb
+K:\GitHub\Emotiv_Game_Unity\cortex-v2-example-master\csharp\RecordData\bin\Debug\CortexAccess.dll
+K:\GitHub\Emotiv_Game_Unity\cortex-v2-example-master\csharp\RecordData\bin\Debug\Newtonsoft.Json.dll
+K:\GitHub\Emotiv_Game_Unity\cortex-v2-example-master\csharp\RecordData\bin\Debug\SuperSocket.ClientEngine.dll
+K:\GitHub\Emotiv_Game_Unity\cortex-v2-example-master\csharp\RecordData\bin\Debug\SuperSocket.ProtoBase.dll
+K:\GitHub\Emotiv_Game_Unity\cortex-v2-example-master\csharp\RecordData\bin\Debug\WebSocket4Net.dll
+K:\GitHub\Emotiv_Game_Unity\cortex-v2-example-master\csharp\RecordData\bin\Debug\CortexAccess.pdb
+K:\GitHub\Emotiv_Game_Unity\cortex-v2-example-master\csharp\RecordData\bin\Debug\CortexAccess.dll.config
+K:\GitHub\Emotiv_Game_Unity\cortex-v2-example-master\csharp\RecordData\bin\Debug\Newtonsoft.Json.xml
+K:\GitHub\Emotiv_Game_Unity\cortex-v2-example-master\csharp\RecordData\bin\Debug\SuperSocket.ProtoBase.xml
+K:\GitHub\Emotiv_Game_Unity\cortex-v2-example-master\csharp\RecordData\obj\Debug\RecordData.csprojAssemblyReference.cache
+K:\GitHub\Emotiv_Game_Unity\cortex-v2-example-master\csharp\RecordData\obj\Debug\RecordData.csproj.CopyComplete
+K:\GitHub\Emotiv_Game_Unity\cortex-v2-example-master\csharp\RecordData\obj\Debug\RecordData.exe
+K:\GitHub\Emotiv_Game_Unity\cortex-v2-example-master\csharp\RecordData\obj\Debug\RecordData.pdb

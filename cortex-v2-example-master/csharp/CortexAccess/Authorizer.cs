@@ -17,6 +17,7 @@ namespace CortexAccess
         public Authorizer()
         {
             _ctxClient = CortexClient.Instance;
+           // _cortexToken = "M6prQohB8UfQwqAEfr8i2xj1xZLo9YRYSbQryrgHtXevQUeDRoZAVW2Ld8GTwAJMFybm68orVk43RKoBB303HAVoLDXCiwfdtb8jQW0jVQ3lD1RcylyWgU7V5nskFsEa";
             _cortexToken = "";
             _emotivId = "";
             _isEulaAccepted = false;

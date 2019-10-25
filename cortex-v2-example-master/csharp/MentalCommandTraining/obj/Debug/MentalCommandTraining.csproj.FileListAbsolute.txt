@@ -1,0 +1,17 @@
+K:\GitHub\Emotiv_Game_Unity\cortex-v2-example-master\csharp\MentalCommandTraining\obj\Debug\MentalCommandTraining.csprojAssemblyReference.cache
+K:\GitHub\Emotiv_Game_Unity\cortex-v2-example-master\csharp\MentalCommandTraining\obj\Debug\MentalCommandTraining.csproj.CoreCompileInputs.cache
+K:\GitHub\Emotiv_Game_Unity\cortex-v2-example-master\csharp\MentalCommandTraining\bin\Debug\MentalCommandTraining.exe.config
+K:\GitHub\Emotiv_Game_Unity\cortex-v2-example-master\csharp\MentalCommandTraining\bin\Debug\MentalCommandTraining.exe
+K:\GitHub\Emotiv_Game_Unity\cortex-v2-example-master\csharp\MentalCommandTraining\bin\Debug\MentalCommandTraining.pdb
+K:\GitHub\Emotiv_Game_Unity\cortex-v2-example-master\csharp\MentalCommandTraining\bin\Debug\CortexAccess.dll
+K:\GitHub\Emotiv_Game_Unity\cortex-v2-example-master\csharp\MentalCommandTraining\bin\Debug\Newtonsoft.Json.dll
+K:\GitHub\Emotiv_Game_Unity\cortex-v2-example-master\csharp\MentalCommandTraining\bin\Debug\WebSocket4Net.dll
+K:\GitHub\Emotiv_Game_Unity\cortex-v2-example-master\csharp\MentalCommandTraining\bin\Debug\SuperSocket.ClientEngine.dll
+K:\GitHub\Emotiv_Game_Unity\cortex-v2-example-master\csharp\MentalCommandTraining\bin\Debug\CortexAccess.pdb
+K:\GitHub\Emotiv_Game_Unity\cortex-v2-example-master\csharp\MentalCommandTraining\bin\Debug\CortexAccess.dll.config
+K:\GitHub\Emotiv_Game_Unity\cortex-v2-example-master\csharp\MentalCommandTraining\bin\Debug\Newtonsoft.Json.xml
+K:\GitHub\Emotiv_Game_Unity\cortex-v2-example-master\csharp\MentalCommandTraining\obj\Debug\MentalCommandTraining.csproj.CopyComplete
+K:\GitHub\Emotiv_Game_Unity\cortex-v2-example-master\csharp\MentalCommandTraining\obj\Debug\MentalCommandTraining.exe
+K:\GitHub\Emotiv_Game_Unity\cortex-v2-example-master\csharp\MentalCommandTraining\obj\Debug\MentalCommandTraining.pdb
+K:\GitHub\Emotiv_Game_Unity\cortex-v2-example-master\csharp\MentalCommandTraining\bin\Debug\SuperSocket.ProtoBase.dll
+K:\GitHub\Emotiv_Game_Unity\cortex-v2-example-master\csharp\MentalCommandTraining\bin\Debug\SuperSocket.ProtoBase.xml
