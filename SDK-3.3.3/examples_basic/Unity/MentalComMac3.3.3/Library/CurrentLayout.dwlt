@@ -116,7 +116,7 @@ MonoBehaviour:
   m_MinSize: {x: 913, y: 448}
   m_MaxSize: {x: 22008, y: 10000}
   vertical: 0
-  controlID: 211
+  controlID: 265
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_MinSize: {x: 202, y: 448}
   m_MaxSize: {x: 4002, y: 8048}
   vertical: 1
-  controlID: 250
+  controlID: 266
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -531,7 +531,7 @@ MonoBehaviour:
   m_LastFolders:
   - Assets
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: /Users/f3tth/Documents/GitHub/BCI_Emotiv_Game/Emotiv_Game_Unity/SDK-3.3.3/examples_basic/Unity/MentalCommand
+  m_LastProjectPath: /Users/f3tth/Documents/GitHub/BCI_Emotiv_Game/Emotiv_Game_Unity/SDK-3.3.3/examples_basic/Unity/MentalComMac3.3.3
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
