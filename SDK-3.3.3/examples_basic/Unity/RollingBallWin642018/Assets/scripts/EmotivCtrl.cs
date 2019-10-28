@@ -40,9 +40,9 @@ public class EmotivCtrl : MonoBehaviour {
 	 * Init the user, password and profile name if you want it
 	*/
 	void Start(){
-		userName.text = "";
-		password.text = "";
-		profileName.text = "";
+		userName.text = "ftth05";
+		password.text = "Ftthkrn05";
+		profileName.text = "fkiran";
 	}
 
 	/*
