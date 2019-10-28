@@ -1,12 +1,20 @@
 ﻿using UnityEngine;
+using System.Collections;
+using UnityEngine.UI;
+using Emotiv;
 
 public class CameraControl : MonoBehaviour
 {
     public float m_DampTime = 0.2f;    // aproximate time             
     public float m_ScreenEdgeBuffer = 4f;    // so that the tanks always on the screen       
     public float m_MinSize = 6.5f;      // min zoom in of camera            
-    /*[HideInInspector]*/ public Transform[] m_Targets; 
+    /*[HideInInspector]*/ public Transform[] m_Targets;
 
+    public GameObject player;
+    public Text message;
+    private Vector3 offset;
+    public float rotationY;
+    public float sensitivity;
 
     private Camera m_Camera;                        
     private float m_ZoomSpeed;                      
@@ -26,6 +34,21 @@ public class CameraControl : MonoBehaviour
         Zoom();
     }
 
+    void LateUpdate()
+    {
+        int x = 0, y = 0;
+        transform.position = player.transform.position + offset;
+        try
+        {
+            EmotivCtrl.engine.HeadsetGetGyroDelta((uint)EmotivCtrl.engineUserID, out x, out y);
+        }
+        catch (Emotiv.EmoEngineException e)
+        {
+            message.text = e.Message;
+        }
+        transform.RotateAround(player.transform.position, Vector3.up, x * sensitivity);
+        offset = transform.position - player.transform.position;
+    }
 
     private void Move()
     {

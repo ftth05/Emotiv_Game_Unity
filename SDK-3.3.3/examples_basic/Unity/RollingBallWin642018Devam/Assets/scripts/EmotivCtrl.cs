@@ -146,7 +146,24 @@ public class EmotivCtrl : MonoBehaviour {
 		}
 	}
 
-	public void TrainPush(){
+
+
+    /*  https://github.com/Emotiv/community-sdk/issues/184
+     public void TrainPull() {
+        //Declare the actions to listen
+        uint action1 = (uint)EdkDll.IEE_MentalCommandAction_t.MC_PULL;
+        uint action2 = (uint)EdkDll.IEE_MentalCommandAction_t.MC_PUSH;
+        uint listAction = action1 | action2;
+        //Set the actions 
+        EmoEngine.Instance.MentalCommandSetActiveActions(0, listAction);
+        //engine.MentalCommandSetActiveActions(0, (uint)EdkDll.IEE_MentalCommandAction_t.MC_PULL);
+        engine.MentalCommandSetTrainingAction((uint)engineUserID, EdkDll.IEE_MentalCommandAction_t.MC_PULL);
+        engine.MentalCommandSetTrainingControl((uint)engineUserID, EdkDll.IEE_MentalCommandTrainingControl_t.MC_START);
+}
+         
+         */
+
+    public void TrainPush(){
 		engine.MentalCommandSetTrainingAction((uint)engineUserID, EdkDll.IEE_MentalCommandAction_t.MC_PUSH);
 		engine.MentalCommandSetTrainingControl((uint)engineUserID, EdkDll.IEE_MentalCommandTrainingControl_t.MC_START);
 	}
@@ -155,6 +172,10 @@ public class EmotivCtrl : MonoBehaviour {
 		engine.MentalCommandSetTrainingAction ((uint)engineUserID, EdkDll.IEE_MentalCommandAction_t.MC_NEUTRAL);
 		engine.MentalCommandSetTrainingControl((uint)engineUserID, EdkDll.IEE_MentalCommandTrainingControl_t.MC_START);
 	}
+
+
+
+
 
 	public void TrainingStarted(object sender, EmoEngineEventArgs e){
 		message_box.text = "Trainig started";

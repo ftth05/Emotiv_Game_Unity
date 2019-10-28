@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/TekTank.unity
+- path: Assets/_Scene.unity
   isLoaded: 1
   isActive: 1
