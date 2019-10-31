@@ -5,7 +5,7 @@ public class CameraControl : MonoBehaviour
     public float m_DampTime = 0.2f;    // aproximate time             
     public float m_ScreenEdgeBuffer = 4f;    // so that the tanks always on the screen       
     public float m_MinSize = 6.5f;      // min zoom in of camera            
-    /*[HideInInspector]*/ public Transform[] m_Targets; 
+    [HideInInspector]public Transform[] m_Targets; 
 
 
     private Camera m_Camera;                        
