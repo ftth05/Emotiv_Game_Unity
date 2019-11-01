@@ -9,7 +9,7 @@ namespace FacialExpressionTraining
     class Program
     {
         private static string _currentAction = "";
-        private static string _profileName = ""; // Put profile ProfileName here
+        private static string _profileName = "fkiran"; // Put profile ProfileName here
 
         private static Training _trainer = new Training();
         private static bool _isSucceeded = false;
