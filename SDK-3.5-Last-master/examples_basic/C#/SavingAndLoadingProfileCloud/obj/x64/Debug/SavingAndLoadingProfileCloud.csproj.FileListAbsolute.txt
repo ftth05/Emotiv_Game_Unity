@@ -1,0 +1,7 @@
+K:\GitHub\Emotiv_Game_Unity\SDK-3.5-Last-master\bin\win64\SavingAndLoadingProfileCloud.exe
+K:\GitHub\Emotiv_Game_Unity\SDK-3.5-Last-master\bin\win64\SavingAndLoadingProfileCloud.pdb
+K:\GitHub\Emotiv_Game_Unity\SDK-3.5-Last-master\examples_basic\C#\SavingAndLoadingProfileCloud\obj\x64\Debug\SavingAndLoadingProfileCloud.csprojAssemblyReference.cache
+K:\GitHub\Emotiv_Game_Unity\SDK-3.5-Last-master\examples_basic\C#\SavingAndLoadingProfileCloud\obj\x64\Debug\SavingAndLoadingProfileCloud.csproj.CoreCompileInputs.cache
+K:\GitHub\Emotiv_Game_Unity\SDK-3.5-Last-master\examples_basic\C#\SavingAndLoadingProfileCloud\obj\x64\Debug\SavingAndLoadingProfileCloud.csproj.CopyComplete
+K:\GitHub\Emotiv_Game_Unity\SDK-3.5-Last-master\examples_basic\C#\SavingAndLoadingProfileCloud\obj\x64\Debug\SavingAndLoadingProfileCloud.exe
+K:\GitHub\Emotiv_Game_Unity\SDK-3.5-Last-master\examples_basic\C#\SavingAndLoadingProfileCloud\obj\x64\Debug\SavingAndLoadingProfileCloud.pdb

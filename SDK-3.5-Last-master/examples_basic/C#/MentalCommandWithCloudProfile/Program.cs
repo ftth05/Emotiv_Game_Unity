@@ -21,9 +21,9 @@ namespace MentalCommandWithCloudProfile
 
         static int userCloudID = 0;
         static int userID = -1;
-        static string userName = "Your account name";
-        static string password = "Your password";        
-        static string profileName = "Profile_1";
+        static string userName = "ftth05";
+        static string password = "Ftthkrn05";        
+        static string profileName = "fkiran";
         static int version = -1; // Lastest version
 
         static Boolean enableLoger = false;

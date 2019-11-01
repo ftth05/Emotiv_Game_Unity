@@ -19,9 +19,12 @@ namespace SavingAndLoadingProfileCloud
     {
         static int engineUserID = -1;
         static int cloudUserID  = 0;
-        static string userName  = "your_EmotivID";
-        static string password  = "your_password";
-        static string profileName = "profile_name";
+        //static string userName  = "your_EmotivID";
+        static string userName = "ftth05";
+        //static string password  = "your_password";
+        static string password = "Ftthkrn05";
+        //static string profileName = "profile_name";
+        static string profileName = "fkiran";
         static int version = -1; // last version
 
         static void engine_UserAdded_Event(object sender, EmoEngineEventArgs e)

@@ -1,0 +1,345 @@
+Initialize engine version: 5.3.4f1 (fdbb5133b820)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA NVS 310 (ID=0x107d)
+    Vendor:   NVIDIA
+    VRAM:     2253 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: K:\GitHub\Emotiv_Game_Unity\SDK-3.3.3\examples_basic\Unity\RollingBallOrginal\Builds\RollingBall_Win_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading K:\GitHub\Emotiv_Game_Unity\SDK-3.3.3\examples_basic\Unity\RollingBallOrginal\Builds\RollingBall_Win_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: K:\GitHub\Emotiv_Game_Unity\SDK-3.3.3\examples_basic\Unity\RollingBallOrginal\Builds\RollingBall_Win_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading K:\GitHub\Emotiv_Game_Unity\SDK-3.3.3\examples_basic\Unity\RollingBallOrginal\Builds\RollingBall_Win_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: K:\GitHub\Emotiv_Game_Unity\SDK-3.3.3\examples_basic\Unity\RollingBallOrginal\Builds\RollingBall_Win_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading K:\GitHub\Emotiv_Game_Unity\SDK-3.3.3\examples_basic\Unity\RollingBallOrginal\Builds\RollingBall_Win_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: K:\GitHub\Emotiv_Game_Unity\SDK-3.3.3\examples_basic\Unity\RollingBallOrginal\Builds\RollingBall_Win_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading K:\GitHub\Emotiv_Game_Unity\SDK-3.3.3\examples_basic\Unity\RollingBallOrginal\Builds\RollingBall_Win_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: K:\GitHub\Emotiv_Game_Unity\SDK-3.3.3\examples_basic\Unity\RollingBallOrginal\Builds\RollingBall_Win_Data\Managed\DotNetEmotivSDK-vs2010.dll (this message is harmless)
+Loading K:\GitHub\Emotiv_Game_Unity\SDK-3.3.3\examples_basic\Unity\RollingBallOrginal\Builds\RollingBall_Win_Data\Managed\DotNetEmotivSDK-vs2010.dll into Unity Child Domain
+- Completed reload, in  0.175 seconds
+Platform assembly: K:\GitHub\Emotiv_Game_Unity\SDK-3.3.3\examples_basic\Unity\RollingBallOrginal\Builds\RollingBall_Win_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: K:\GitHub\Emotiv_Game_Unity\SDK-3.3.3\examples_basic\Unity\RollingBallOrginal\Builds\RollingBall_Win_Data\Managed\System.dll (this message is harmless)
+desktop: 1680x1050 59Hz; virtual: 1680x1050 at 0,0
+<RI> Initializing input.
+XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
+<RI> Input initialized.
+<RI> Initialized touch support.
+The referenced script on this Behaviour (Game Object 'Canvas') is missing!
+ 
+(Filename:  Line: 1655)
+
+UnloadTime: 0.530500 ms
+Corrent action: MC_NEUTRAL
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Setting up 1 worker threads for Enlighten.
+  Thread -> id: 33dc -> priority: 1 
+Corrent action: MC_NEUTRAL
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Corrent action: MC_NEUTRAL
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Corrent action: MC_NEUTRAL
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Corrent action: MC_NEUTRAL
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Corrent action: MC_NEUTRAL
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Corrent action: MC_NEUTRAL
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Corrent action: MC_NEUTRAL
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Corrent action: MC_NEUTRAL
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Corrent action: MC_NEUTRAL
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Corrent action: MC_NEUTRAL
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Corrent action: MC_NEUTRAL
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Corrent action: MC_NEUTRAL
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Corrent action: MC_NEUTRAL
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Corrent action: MC_NEUTRAL
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Corrent action: MC_NEUTRAL
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Corrent action: MC_NEUTRAL
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Corrent action: MC_NEUTRAL
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Corrent action: MC_NEUTRAL
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Corrent action: MC_NEUTRAL
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Corrent action: MC_NEUTRAL
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Corrent action: MC_NEUTRAL
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Corrent action: MC_NEUTRAL
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Corrent action: MC_NEUTRAL
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Corrent action: MC_NEUTRAL
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Corrent action: MC_NEUTRAL
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Corrent action: MC_NEUTRAL
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Corrent action: MC_NEUTRAL
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Corrent action: MC_NEUTRAL
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Corrent action: MC_NEUTRAL
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Corrent action: MC_NEUTRAL
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Corrent action: MC_NEUTRAL
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Corrent action: MC_NEUTRAL
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Corrent action: MC_NEUTRAL
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Corrent action: MC_NEUTRAL
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Corrent action: MC_NEUTRAL
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Corrent action: MC_NEUTRAL
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Corrent action: MC_NEUTRAL
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Corrent action: MC_NEUTRAL
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Corrent action: MC_NEUTRAL
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Corrent action: MC_NEUTRAL
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Corrent action: MC_NEUTRAL
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Corrent action: MC_NEUTRAL
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Corrent action: MC_NEUTRAL
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Corrent action: MC_NEUTRAL
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Corrent action: MC_NEUTRAL
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Corrent action: MC_NEUTRAL
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Corrent action: MC_NEUTRAL
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Corrent action: MC_NEUTRAL
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Corrent action: MC_NEUTRAL
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Corrent action: MC_NEUTRAL
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Corrent action: MC_NEUTRAL
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Corrent action: MC_NEUTRAL
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Corrent action: MC_NEUTRAL
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Corrent action: MC_NEUTRAL
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Corrent action: MC_NEUTRAL
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Corrent action: MC_NEUTRAL
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Corrent action: MC_NEUTRAL
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Corrent action: MC_NEUTRAL
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Corrent action: MC_NEUTRAL
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Corrent action: MC_NEUTRAL
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Corrent action: MC_NEUTRAL
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Corrent action: MC_NEUTRAL
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Corrent action: MC_NEUTRAL
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Corrent action: MC_NEUTRAL
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Corrent action: MC_NEUTRAL
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Corrent action: MC_NEUTRAL
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Corrent action: MC_NEUTRAL
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Corrent action: MC_NEUTRAL
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Corrent action: MC_NEUTRAL
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Corrent action: MC_NEUTRAL
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Corrent action: MC_NEUTRAL
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Corrent action: MC_NEUTRAL
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Corrent action: MC_NEUTRAL
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Corrent action: MC_NEUTRAL
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Corrent action: MC_NEUTRAL
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Corrent action: MC_NEUTRAL
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Application ending after 33.86665 seconds
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
