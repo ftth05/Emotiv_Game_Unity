@@ -1,8 +1,10 @@
 ﻿<Properties StartupConfiguration="{2B7579BD-A133-4521-9121-9478CD6E6484}|Default">
   <MonoDevelop.Ide.ItemProperties.EEGLogger PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="CortexAccess/Authorizer.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="MentalCommandTraining/Program.cs">
     <Files>
-      <File FileName="CortexAccess/Authorizer.cs" Line="124" Column="4" />
+      <File FileName="CortexAccess/Authorizer.cs" Line="124" Column="157" />
+      <File FileName="CortexAccess/Config.cs" Line="9" Column="177" />
+      <File FileName="MentalCommandTraining/Program.cs" Line="11" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.MentalCommandTraining PreferredExecutionTarget="MonoDevelop.Default" />

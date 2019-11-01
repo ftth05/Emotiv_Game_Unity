@@ -5,8 +5,8 @@
         public static int DebitNumber = 5;// Default
 
         public static string LicenseId = "put your license here";
-        public static string AppClientId = "put your client Id";
-        public static string AppClientSecret = "put your clientSecret";
+        public static string AppClientId = "sFefkC6ZoE9U6Ndic9SU3olBlRfBJV7GygJlAlhR";
+        public static string AppClientSecret = "M6prQohB8UfQwqAEfr8i2xj1xZLo9YRYSbQryrgHtXevQUeDRoZAVW2Ld8GTwAJMFybm68orVk43RKoBB303HAVoLDXCiwfdtb8jQW0jVQ3lD1RcylyWgU7V5nskFsEa";
 
         // default debit number
 
