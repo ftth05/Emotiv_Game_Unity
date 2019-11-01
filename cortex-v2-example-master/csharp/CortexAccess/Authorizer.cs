@@ -18,8 +18,8 @@ namespace CortexAccess
         {
             _ctxClient = CortexClient.Instance;
            // _cortexToken = "M6prQohB8UfQwqAEfr8i2xj1xZLo9YRYSbQryrgHtXevQUeDRoZAVW2Ld8GTwAJMFybm68orVk43RKoBB303HAVoLDXCiwfdtb8jQW0jVQ3lD1RcylyWgU7V5nskFsEa";
-            _cortexToken = "";
-            _emotivId = "";
+            _cortexToken = "M6prQohB8UfQwqAEfr8i2xj1xZLo9YRYSbQryrgHtXevQUeDRoZAVW2Ld8GTwAJMFybm68orVk43RKoBB303HAVoLDXCiwfdtb8jQW0jVQ3lD1RcylyWgU7V5nskFsEa";
+            _emotivId = "ftth05";
             _isEulaAccepted = false;
             _hasAccessRight = false;
 
@@ -120,8 +120,8 @@ namespace CortexAccess
         private void UserLogoutOK(object sender, string message)
         {
             Console.WriteLine(message);
-            _emotivId = "";
-            _cortexToken = "";
+            _emotivId = "ftth05";
+            _cortexToken = "M6prQohB8UfQwqAEfr8i2xj1xZLo9YRYSbQryrgHtXevQUeDRoZAVW2Ld8GTwAJMFybm68orVk43RKoBB303HAVoLDXCiwfdtb8jQW0jVQ3lD1RcylyWgU7V5nskFsEa";
             _isEulaAccepted = false;
             _hasAccessRight = false;
         }
