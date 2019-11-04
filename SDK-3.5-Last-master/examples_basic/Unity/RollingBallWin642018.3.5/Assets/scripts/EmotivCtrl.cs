@@ -87,7 +87,7 @@ public class EmotivCtrl : MonoBehaviour {
 
 	public bool CloudConnected()
 	{
-		if (EmotivCloudClient.EC_Connect () == EdkDll.EDK_OK) {
+		if (EmotivCloudClient.EC_Connect () == EdkDll.EDK_OK) { //use EdkDll.EDK_OK instead of Emotiv.EmotivCloudClient.EC_OK
 			message_box.text = "Connection to server OK";
 			if (EmotivCloudClient.EC_Login (userName.text, password.text)== EdkDll.EDK_OK) {
 				message_box.text = "Login as " + userName.text;
@@ -111,7 +111,7 @@ public class EmotivCtrl : MonoBehaviour {
 	public void SaveProfile(){
 		if (CloudConnected ()) {
             int profileId = -1;
-            EmotivCloudClient.EC_GetProfileId(userCloudID, profileName.text, ref profileId);
+             EmotivCloudClient.EC_GetProfileId(userCloudID, profileName.text, ref profileId);
             if (profileId >= 0) {
 				if (EmotivCloudClient.EC_UpdateUserProfile (userCloudID, (int)engineUserID, profileId) == EdkDll.EDK_OK) {
 					message_box.text = "Profile updated";
@@ -119,8 +119,7 @@ public class EmotivCtrl : MonoBehaviour {
 					message_box.text = "Error saving profile, aborting";
 				}
 			} else {
-				if (EmotivCloudClient.EC_SaveUserProfile (
-					userCloudID, engineUserID, profileName.text, 
+				if (EmotivCloudClient.EC_SaveUserProfile (userCloudID, engineUserID, profileName.text, 
 					EmotivCloudClient.profileFileType.TRAINING) == EdkDll.EDK_OK) {
 					message_box.text = "Profiled saved successfully";
 				} else {
@@ -132,18 +131,22 @@ public class EmotivCtrl : MonoBehaviour {
 	}
 
 	public void LoadProfile(){
-        int profileId = -1;
-        EmotivCloudClient.EC_GetProfileId(userCloudID, profileName.text, ref profileId);
-        if (CloudConnected ()) {
-			if (EmotivCloudClient.EC_LoadUserProfile ( 
-                userCloudID, (int)engineUserID, EmotivCloudClient.EC_GetProfileId(userCloudID, profileName.text, ref profileId),
-                (int)version) == EdkDll.EDK_OK) {
-				message_box.text = "Load finished";
-			} 
-			else {
-				message_box.text = "Problem loading or bundle isn't pluged"; // from Problem loading to this
+        
+        if (CloudConnected())
+        {
+            int profileId = -1;
+            EmotivCloudClient.EC_GetProfileId(userCloudID, profileName.text, ref profileId);
+            if (EmotivCloudClient.EC_LoadUserProfile(userCloudID, (int)engineUserID, (int)profileId, (int)version) == EdkDll.EDK_OK)
+            {
+                message_box.text = "Load finished";
             }
-		}
+            else
+            {
+                message_box.text = "Problem loading or bundle isn't pluged"; // from Problem loading to this
+     
+            }
+        }
+        else { message_box.text = "Cloud is not connected"; } // I added
 	}
 
 	public void TrainPush(){

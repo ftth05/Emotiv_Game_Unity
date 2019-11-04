@@ -480,10 +480,6 @@ K:\GitHub\Emotiv_Game_Unity\SDK-3.5-Last-master\examples_basic\Unity\RollingBall
 K:\GitHub\Emotiv_Game_Unity\SDK-3.5-Last-master\examples_basic\Unity\RollingBallWin642018\obj\Debug\Assembly-CSharp.csproj.CopyComplete
 K:\GitHub\Emotiv_Game_Unity\SDK-3.5-Last-master\examples_basic\Unity\RollingBallWin642018\obj\Debug\Assembly-CSharp.dll
 K:\GitHub\Emotiv_Game_Unity\SDK-3.5-Last-master\examples_basic\Unity\RollingBallWin642018\obj\Debug\Assembly-CSharp.pdb
-K:\GitHub\Emotiv_Game_Unity\SDK-3.5-Last-master\examples_basic\Unity\RollingBallWin642018.3.5\obj\Debug\Assembly-CSharp.csprojAssemblyReference.cache
-K:\GitHub\Emotiv_Game_Unity\SDK-3.5-Last-master\examples_basic\Unity\RollingBallWin642018.3.5\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache
-K:\GitHub\Emotiv_Game_Unity\SDK-3.5-Last-master\examples_basic\Unity\RollingBallWin642018.3.5\obj\Debug\Assembly-CSharp.dll
-K:\GitHub\Emotiv_Game_Unity\SDK-3.5-Last-master\examples_basic\Unity\RollingBallWin642018.3.5\obj\Debug\Assembly-CSharp.pdb
 K:\GitHub\Emotiv_Game_Unity\SDK-3.5-Last-master\examples_basic\Unity\RollingBallWin642018.3.5\Temp\bin\Debug\Assembly-CSharp.dll
 K:\GitHub\Emotiv_Game_Unity\SDK-3.5-Last-master\examples_basic\Unity\RollingBallWin642018.3.5\Temp\bin\Debug\Assembly-CSharp.pdb
 K:\GitHub\Emotiv_Game_Unity\SDK-3.5-Last-master\examples_basic\Unity\RollingBallWin642018.3.5\Temp\bin\Debug\DotNetEmotivSDK.dll
@@ -720,4 +716,7 @@ K:\GitHub\Emotiv_Game_Unity\SDK-3.5-Last-master\examples_basic\Unity\RollingBall
 K:\GitHub\Emotiv_Game_Unity\SDK-3.5-Last-master\examples_basic\Unity\RollingBallWin642018.3.5\Temp\bin\Debug\UnityEngine.VideoModule.xml
 K:\GitHub\Emotiv_Game_Unity\SDK-3.5-Last-master\examples_basic\Unity\RollingBallWin642018.3.5\Temp\bin\Debug\UnityEngine.XRModule.xml
 K:\GitHub\Emotiv_Game_Unity\SDK-3.5-Last-master\examples_basic\Unity\RollingBallWin642018.3.5\Temp\bin\Debug\nunit.framework.xml
+K:\GitHub\Emotiv_Game_Unity\SDK-3.5-Last-master\examples_basic\Unity\RollingBallWin642018.3.5\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache
 K:\GitHub\Emotiv_Game_Unity\SDK-3.5-Last-master\examples_basic\Unity\RollingBallWin642018.3.5\obj\Debug\Assembly-CSharp.csproj.CopyComplete
+K:\GitHub\Emotiv_Game_Unity\SDK-3.5-Last-master\examples_basic\Unity\RollingBallWin642018.3.5\obj\Debug\Assembly-CSharp.dll
+K:\GitHub\Emotiv_Game_Unity\SDK-3.5-Last-master\examples_basic\Unity\RollingBallWin642018.3.5\obj\Debug\Assembly-CSharp.pdb
