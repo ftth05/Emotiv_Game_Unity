@@ -1,8 +1,0 @@
-K:\GitHub\Emotiv_Game_Unity\SDK-3.5-Last-master\bin\win32\DotNetEmotivSDK.dll
-K:\GitHub\Emotiv_Game_Unity\SDK-3.5-Last-master\bin\win32\DotNetEmotivSDK.pdb
-K:\GitHub\Emotiv_Game_Unity\SDK-3.5-Last-master\examples_basic\C#\DotNetEmotivSDK\obj\x86\Debug\DotNetEmotivSDK.csprojAssemblyReference.cache
-K:\GitHub\Emotiv_Game_Unity\SDK-3.5-Last-master\examples_basic\C#\DotNetEmotivSDK\obj\x86\Debug\DotNetEmotivSDK.csproj.CoreCompileInputs.cache
-K:\GitHub\Emotiv_Game_Unity\SDK-3.5-Last-master\examples_basic\C#\DotNetEmotivSDK\obj\x86\Debug\DotNetEmotivSDK.dll
-K:\GitHub\Emotiv_Game_Unity\SDK-3.5-Last-master\examples_basic\C#\DotNetEmotivSDK\obj\x86\Debug\DotNetEmotivSDK.pdb
-K:\GitHub\Emotiv_Game_Unity\SDK-3.5-Last-master\bin\AllPlatfs\DotNetEmotivSDK.dll
-K:\GitHub\Emotiv_Game_Unity\SDK-3.5-Last-master\bin\AllPlatfs\DotNetEmotivSDK.pdb

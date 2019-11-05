@@ -1,1 +1,0 @@
-https://github.com/Emotiv/community-sdk/blob/master/Getting_started_with_Emotiv_SDK.pdf

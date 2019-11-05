@@ -1,7 +1,0 @@
-K:\GitHub\Emotiv_Game_Unity\SDK-3.5-Last-master\bin\win64\MentalCommandWithCloudProfile.exe
-K:\GitHub\Emotiv_Game_Unity\SDK-3.5-Last-master\bin\win64\MentalCommandWithCloudProfile.pdb
-K:\GitHub\Emotiv_Game_Unity\SDK-3.5-Last-master\examples_basic\C#\MentalCommandWithCloudProfile\obj\x64\Debug\MentalCommandWithCloudProfile.csprojAssemblyReference.cache
-K:\GitHub\Emotiv_Game_Unity\SDK-3.5-Last-master\examples_basic\C#\MentalCommandWithCloudProfile\obj\x64\Debug\MentalCommandWithCloudProfile.csproj.CoreCompileInputs.cache
-K:\GitHub\Emotiv_Game_Unity\SDK-3.5-Last-master\examples_basic\C#\MentalCommandWithCloudProfile\obj\x64\Debug\MentalCommandWithCloudProfile.csproj.CopyComplete
-K:\GitHub\Emotiv_Game_Unity\SDK-3.5-Last-master\examples_basic\C#\MentalCommandWithCloudProfile\obj\x64\Debug\MentalCommandWithCloudProfile.exe
-K:\GitHub\Emotiv_Game_Unity\SDK-3.5-Last-master\examples_basic\C#\MentalCommandWithCloudProfile\obj\x64\Debug\MentalCommandWithCloudProfile.pdb
