@@ -1,0 +1,15 @@
+K:\GitHub\Emotiv_Game_Unity\cortex-v2-example-master\csharp\InjectMarker\bin\Debug\InjectMarker.exe.config
+K:\GitHub\Emotiv_Game_Unity\cortex-v2-example-master\csharp\InjectMarker\bin\Debug\InjectMarker.exe
+K:\GitHub\Emotiv_Game_Unity\cortex-v2-example-master\csharp\InjectMarker\bin\Debug\InjectMarker.pdb
+K:\GitHub\Emotiv_Game_Unity\cortex-v2-example-master\csharp\InjectMarker\bin\Debug\CortexAccess.dll
+K:\GitHub\Emotiv_Game_Unity\cortex-v2-example-master\csharp\InjectMarker\bin\Debug\Newtonsoft.Json.dll
+K:\GitHub\Emotiv_Game_Unity\cortex-v2-example-master\csharp\InjectMarker\bin\Debug\SuperSocket.ClientEngine.dll
+K:\GitHub\Emotiv_Game_Unity\cortex-v2-example-master\csharp\InjectMarker\bin\Debug\WebSocket4Net.dll
+K:\GitHub\Emotiv_Game_Unity\cortex-v2-example-master\csharp\InjectMarker\bin\Debug\CortexAccess.pdb
+K:\GitHub\Emotiv_Game_Unity\cortex-v2-example-master\csharp\InjectMarker\bin\Debug\CortexAccess.dll.config
+K:\GitHub\Emotiv_Game_Unity\cortex-v2-example-master\csharp\InjectMarker\bin\Debug\Newtonsoft.Json.xml
+K:\GitHub\Emotiv_Game_Unity\cortex-v2-example-master\csharp\InjectMarker\obj\Debug\InjectMarkers.csprojAssemblyReference.cache
+K:\GitHub\Emotiv_Game_Unity\cortex-v2-example-master\csharp\InjectMarker\obj\Debug\InjectMarkers.csproj.CoreCompileInputs.cache
+K:\GitHub\Emotiv_Game_Unity\cortex-v2-example-master\csharp\InjectMarker\obj\Debug\InjectMarkers.csproj.CopyComplete
+K:\GitHub\Emotiv_Game_Unity\cortex-v2-example-master\csharp\InjectMarker\obj\Debug\InjectMarker.exe
+K:\GitHub\Emotiv_Game_Unity\cortex-v2-example-master\csharp\InjectMarker\obj\Debug\InjectMarker.pdb

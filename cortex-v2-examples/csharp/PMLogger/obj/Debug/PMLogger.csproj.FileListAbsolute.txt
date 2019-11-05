@@ -1,0 +1,15 @@
+K:\GitHub\Emotiv_Game_Unity\cortex-v2-example-master\csharp\PMLogger\bin\Debug\PMLogger.exe.config
+K:\GitHub\Emotiv_Game_Unity\cortex-v2-example-master\csharp\PMLogger\bin\Debug\PMLogger.exe
+K:\GitHub\Emotiv_Game_Unity\cortex-v2-example-master\csharp\PMLogger\bin\Debug\PMLogger.pdb
+K:\GitHub\Emotiv_Game_Unity\cortex-v2-example-master\csharp\PMLogger\bin\Debug\CortexAccess.dll
+K:\GitHub\Emotiv_Game_Unity\cortex-v2-example-master\csharp\PMLogger\bin\Debug\Newtonsoft.Json.dll
+K:\GitHub\Emotiv_Game_Unity\cortex-v2-example-master\csharp\PMLogger\bin\Debug\SuperSocket.ClientEngine.dll
+K:\GitHub\Emotiv_Game_Unity\cortex-v2-example-master\csharp\PMLogger\bin\Debug\WebSocket4Net.dll
+K:\GitHub\Emotiv_Game_Unity\cortex-v2-example-master\csharp\PMLogger\bin\Debug\CortexAccess.pdb
+K:\GitHub\Emotiv_Game_Unity\cortex-v2-example-master\csharp\PMLogger\bin\Debug\CortexAccess.dll.config
+K:\GitHub\Emotiv_Game_Unity\cortex-v2-example-master\csharp\PMLogger\bin\Debug\Newtonsoft.Json.xml
+K:\GitHub\Emotiv_Game_Unity\cortex-v2-example-master\csharp\PMLogger\obj\Debug\PMLogger.csprojAssemblyReference.cache
+K:\GitHub\Emotiv_Game_Unity\cortex-v2-example-master\csharp\PMLogger\obj\Debug\PMLogger.csproj.CoreCompileInputs.cache
+K:\GitHub\Emotiv_Game_Unity\cortex-v2-example-master\csharp\PMLogger\obj\Debug\PMLogger.csproj.CopyComplete
+K:\GitHub\Emotiv_Game_Unity\cortex-v2-example-master\csharp\PMLogger\obj\Debug\PMLogger.exe
+K:\GitHub\Emotiv_Game_Unity\cortex-v2-example-master\csharp\PMLogger\obj\Debug\PMLogger.pdb
