@@ -4,7 +4,7 @@
     {
         public static int DebitNumber = 5;// Default
 
-        public static string LicenseId = "put your license here";
+        public static string LicenseId = "b9a3bb7e-f10a-4e40-ab41-1a9eedd1fd31";
         public static string AppClientId = "sFefkC6ZoE9U6Ndic9SU3olBlRfBJV7GygJlAlhR";
         public static string AppClientSecret = "M6prQohB8UfQwqAEfr8i2xj1xZLo9YRYSbQryrgHtXevQUeDRoZAVW2Ld8GTwAJMFybm68orVk43RKoBB303HAVoLDXCiwfdtb8jQW0jVQ3lD1RcylyWgU7V5nskFsEa";
 

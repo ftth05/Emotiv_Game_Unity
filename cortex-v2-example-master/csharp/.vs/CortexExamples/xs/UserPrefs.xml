@@ -1,0 +1,19 @@
+﻿<Properties StartupConfiguration="{9891B889-B3D7-4922-9853-7481387AD812}|Default">
+  <MonoDevelop.Ide.ItemProperties.EEGLogger PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="CortexAccess/Config.cs">
+    <Files>
+      <File FileName="MentalCommandTraining/Program.cs" Line="1" Column="1" />
+      <File FileName="CortexAccess/App.config" Line="1" Column="1" />
+      <File FileName="CortexAccess/Authorizer.cs" Line="1" Column="1" />
+      <File FileName="CortexAccess/Record.cs" Line="11" Column="24" />
+      <File FileName="CortexAccess/Config.cs" Line="7" Column="79" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.MentalCommandTraining PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
