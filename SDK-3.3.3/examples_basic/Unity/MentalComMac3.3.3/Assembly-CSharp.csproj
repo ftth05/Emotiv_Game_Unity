@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{5E0346E5-2DC9-0535-EE0D-F161A16119B5}</ProjectGuid>
+    <ProjectGuid>{B44E46EE-4E83-EA5A-6406-ABFADC86EECF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -65,19 +65,19 @@
     <Compile Include="Assets\Scripts\cube.cs" />
     <Compile Include="Assets\Scripts\MentalCommandControl.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>/Users/f3tth/Documents/GitHub/BCI_Emotiv_Game/Emotiv_Game_Unity/SDK-3.3.3/examples_basic/Unity/MentalCommand/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>/Users/f3tth/Documents/GitHub/BCI_Emotiv_Game/Emotiv_Game_Unity/SDK-3.3.3/examples_basic/Unity/MentalComMac3.3.3/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>/Users/f3tth/Documents/GitHub/BCI_Emotiv_Game/Emotiv_Game_Unity/SDK-3.3.3/examples_basic/Unity/MentalCommand/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>/Users/f3tth/Documents/GitHub/BCI_Emotiv_Game/Emotiv_Game_Unity/SDK-3.3.3/examples_basic/Unity/MentalComMac3.3.3/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>/Users/f3tth/Documents/GitHub/BCI_Emotiv_Game/Emotiv_Game_Unity/SDK-3.3.3/examples_basic/Unity/MentalCommand/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>/Users/f3tth/Documents/GitHub/BCI_Emotiv_Game/Emotiv_Game_Unity/SDK-3.3.3/examples_basic/Unity/MentalComMac3.3.3/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>/Users/f3tth/Documents/GitHub/BCI_Emotiv_Game/Emotiv_Game_Unity/SDK-3.3.3/examples_basic/Unity/MentalCommand/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>/Users/f3tth/Documents/GitHub/BCI_Emotiv_Game/Emotiv_Game_Unity/SDK-3.3.3/examples_basic/Unity/MentalComMac3.3.3/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.DataPrivacy">
-      <HintPath>/Users/f3tth/Documents/GitHub/BCI_Emotiv_Game/Emotiv_Game_Unity/SDK-3.3.3/examples_basic/Unity/MentalCommand/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+      <HintPath>/Users/f3tth/Documents/GitHub/BCI_Emotiv_Game/Emotiv_Game_Unity/SDK-3.3.3/examples_basic/Unity/MentalComMac3.3.3/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>/Applications/Unity/Hub/Editor/2018.4.7f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -284,13 +284,13 @@
       <HintPath>/Applications/Unity/Hub/Editor/2018.4.7f1/Unity.app/Contents/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
-      <HintPath>/Users/f3tth/Documents/GitHub/BCI_Emotiv_Game/Emotiv_Game_Unity/SDK-3.3.3/examples_basic/Unity/MentalCommand/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
+      <HintPath>/Users/f3tth/Documents/GitHub/BCI_Emotiv_Game/Emotiv_Game_Unity/SDK-3.3.3/examples_basic/Unity/MentalComMac3.3.3/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Editor">
-      <HintPath>/Users/f3tth/Documents/GitHub/BCI_Emotiv_Game/Emotiv_Game_Unity/SDK-3.3.3/examples_basic/Unity/MentalCommand/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
+      <HintPath>/Users/f3tth/Documents/GitHub/BCI_Emotiv_Game/Emotiv_Game_Unity/SDK-3.3.3/examples_basic/Unity/MentalComMac3.3.3/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.StandardEvents">
-      <HintPath>/Users/f3tth/Documents/GitHub/BCI_Emotiv_Game/Emotiv_Game_Unity/SDK-3.3.3/examples_basic/Unity/MentalCommand/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
+      <HintPath>/Users/f3tth/Documents/GitHub/BCI_Emotiv_Game/Emotiv_Game_Unity/SDK-3.3.3/examples_basic/Unity/MentalComMac3.3.3/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>/Applications/Unity/Hub/Editor/2018.4.7f1/Unity.app/Contents/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
@@ -640,7 +640,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{FB0BD617-EC0C-F5C1-118A-90201178D98C}</Project>
+      <Project>{CB183C01-428F-635D-089B-28241AEBA33E}</Project>
       <Name>Assembly-CSharp-firstpass</Name>
     </ProjectReference>
   </ItemGroup>
