@@ -5,7 +5,7 @@ using UnityEngine;
 public class TouchRotate : MonoBehaviour
 
 {
-    /*
+    // with this code I can rotate the picture via mouse click when the status is neutral.
     public static int action = 0;
 
 
@@ -32,9 +32,9 @@ public class TouchRotate : MonoBehaviour
 
         }
 
-    }*/
+    }
 
-    
+    /*
     public static int action = 0;
     public static float speed = 7.0f / 8.0f;
     // Use this for initialization
@@ -46,9 +46,11 @@ public class TouchRotate : MonoBehaviour
     void Update () {
         if (action == 0)
         {
-            if (transform.localPosition.z > 0)
+            if (!GameControl.youWin)
+            //if (transform.localPosition.z > 0)
             {
-                transform.Translate(0, 0, -speed * Time.deltaTime * 10);
+                transform.Rotate(0f, 0f, 90f);
+                //transform.Translate(0, 0, -speed * Time.deltaTime * 10);
             }
             else
             {
@@ -68,6 +70,6 @@ public class TouchRotate : MonoBehaviour
         }
     }
 
-
+    */
 
 }
