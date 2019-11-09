@@ -9,6 +9,8 @@ public class GameControl : MonoBehaviour
     [SerializeField]
     private GameObject winText;
 
+
+
     public static bool youWin;
 
 
@@ -16,6 +18,8 @@ public class GameControl : MonoBehaviour
     {
         winText.SetActive(false);
         youWin = false;
+
+
     }
 
     void Update()

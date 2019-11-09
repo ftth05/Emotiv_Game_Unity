@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 public class MentalCommandControl : MonoBehaviour {
 
-	// Use this for initialization
+    // Use this for initialization
     EmoEngine engine;
     public Button btnNeutral, btnPush;
     public Slider slider;
@@ -11,11 +11,23 @@ public class MentalCommandControl : MonoBehaviour {
     uint userId;
     bool training = false;
     float trainingInterval = 0.0625f; //duration 8s
-	void Start () {
+
+   
+
+
+    void Start () {
         engine = EmoEngine.Instance;
         bindEvents();
         StartCoroutine(updateSlider());
-	}
+
+       // 
+        GameObject[] restPics = GameObject.FindGameObjectsWithTag("RestPics");
+
+        for (int i = 0; i < restPics.Length; i++)
+            restPics[i].SetActive(false); // should be false
+        //
+
+    }
 
     IEnumerator updateSlider(){
         yield return new WaitForSeconds(0.5f);
@@ -63,8 +75,10 @@ public class MentalCommandControl : MonoBehaviour {
 
     void onTrainingStarted(object sender, EmoEngineEventArgs args){
         status.text = "Training started";
-        btnNeutral.gameObject.SetActive(false);
+        
+        btnNeutral.gameObject.SetActive(false); 
         btnPush.gameObject.SetActive(false);
+
         slider.value = 0;
         training = true;
     }
@@ -78,6 +92,13 @@ public class MentalCommandControl : MonoBehaviour {
 
     void onTrainingCompleted(object sender, EmoEngineEventArgs args){
         status.text = "Training completed";
+        /*//
+        GameObject[] restPics = GameObject.FindGameObjectsWithTag("RestPics");
+
+        for (int i = 0; i < restPics.Length; i++)
+            restPics[i].SetActive(true);
+        // */
+
         btnNeutral.gameObject.SetActive(true);
         btnPush.gameObject.SetActive(true);
         slider.value = 0;
@@ -89,6 +110,7 @@ public class MentalCommandControl : MonoBehaviour {
 	}
 
     public void startTrainingNeutral(){
+
         training = true;
         status.text = "Start training neutral";
         //no need to call MentalCommandSetActiveActions with neutral action

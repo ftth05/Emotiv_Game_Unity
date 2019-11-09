@@ -63,7 +63,6 @@
     <Compile Include="Assets\Contact Quality\ContactQualityUIControl.cs" />
     <Compile Include="Assets\GameControl.cs" />
     <Compile Include="Assets\Scripts\Controller.cs" />
-    <Compile Include="Assets\Scripts\cube.cs" />
     <Compile Include="Assets\Scripts\MentalCommandControl.cs" />
     <Compile Include="Assets\Scripts\TouchRotate.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
