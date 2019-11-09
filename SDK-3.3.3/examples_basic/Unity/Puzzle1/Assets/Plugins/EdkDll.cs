@@ -146,7 +146,7 @@ public class EdkDll
 		MC_DROP             = 0x0010,
         MC_LEFT             = 0x0020,
 		MC_RIGHT            = 0x0040,
-		MC_ROTATE_LEFT      = 0x0080,
+		MC_Push      = 0x0080,
 		MC_ROTATE_RIGHT     = 0x0100,
 		MC_ROTATE_CLOCKWISE = 0x0200,
 		MC_ROTATE_COUNTER_CLOCKWISE = 0x0400,

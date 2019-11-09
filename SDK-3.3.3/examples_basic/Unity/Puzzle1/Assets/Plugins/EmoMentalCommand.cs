@@ -16,7 +16,7 @@ public class EmoMentalCommand : MonoBehaviour
                                                                     EdkDll.IEE_MentalCommandAction_t.MC_DROP,
                                                                     EdkDll.IEE_MentalCommandAction_t.MC_LEFT,
                                                                     EdkDll.IEE_MentalCommandAction_t.MC_RIGHT,
-                                                                    EdkDll.IEE_MentalCommandAction_t.MC_ROTATE_LEFT,
+                                                                    EdkDll.IEE_MentalCommandAction_t.MC_Push,
                                                                     EdkDll.IEE_MentalCommandAction_t.MC_ROTATE_RIGHT,
                                                                     EdkDll.IEE_MentalCommandAction_t.MC_ROTATE_CLOCKWISE,
                                                                     EdkDll.IEE_MentalCommandAction_t.MC_ROTATE_COUNTER_CLOCKWISE,

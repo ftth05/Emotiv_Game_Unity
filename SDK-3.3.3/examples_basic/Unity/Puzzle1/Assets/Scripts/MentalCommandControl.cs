@@ -48,7 +48,7 @@ public class MentalCommandControl : MonoBehaviour {
                 TouchRotate.action = 0;
                 status.text = "CurrentAction: Neutral";
                 break;
-            case EdkDll.IEE_MentalCommandAction_t.MC_ROTATE_LEFT:
+            case EdkDll.IEE_MentalCommandAction_t.MC_PUSH:
                 TouchRotate.action = 1;
                 status.text = "CurrentAction: Pushing";
                 break;
@@ -99,8 +99,8 @@ public class MentalCommandControl : MonoBehaviour {
         training = true;
         status.text = "Start training push";
         TouchRotate.action = 1;
-        engine.MentalCommandSetActiveActions(userId, (uint)EdkDll.IEE_MentalCommandAction_t.MC_ROTATE_LEFT);
-        engine.MentalCommandSetTrainingAction(userId, EdkDll.IEE_MentalCommandAction_t.MC_ROTATE_LEFT);
+        engine.MentalCommandSetActiveActions(userId, (uint)EdkDll.IEE_MentalCommandAction_t.MC_PUSH);
+        engine.MentalCommandSetTrainingAction(userId, EdkDll.IEE_MentalCommandAction_t.MC_PUSH);
         engine.MentalCommandSetTrainingControl(userId, EdkDll.IEE_MentalCommandTrainingControl_t.MC_START);
     }
 
