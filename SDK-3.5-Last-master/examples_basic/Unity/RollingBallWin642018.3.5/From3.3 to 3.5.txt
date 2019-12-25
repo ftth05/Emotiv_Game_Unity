@@ -3,6 +3,20 @@ Suan C:\Emotiv de last sdk nin dll i var ve sdk3.5 deki rolling ball u update et
 
 https://github.com/Emotiv/community-sdk/issues/184 
 
+Download and install Unity3D, if you want to compile for Mac, Windows or Android there are options in the installer.
+Donwload or clone this repository.
+Create a Folder some where in your system and copy there the EDK.dll (If your machine its 64 bits use x64 version, else use x86)
+Add a system variable using the path of the folder you just created. This depends on you OS, so you have to find out the specific way for your system.
+Compile the DotNetEmotivSDK.
+5.1. Got to the C# forder in the repository copy on your machine and open the DotNetEmotivSDK project with Visual Studio.
+5.2. Right click on the project DotNetEmotivSDK in the Solution Explorer (Right Panel), click on Properties.
+5.3. On the Application Tab, select Target Framework to .Net Framework 3.5 (The default that Unity Uses), save changes (Ctrl+S).
+5.4. Right click on the project DotNetEmotivSDK in the Solution Explorer, select Build.
+5.5. Go to the project folder /bin/Debug or /bin/Release and search for the DotNetEmotivSDK.dll.
+Add the compiled DotNetEmotivSDK.dll to the assets folder in Unity, when scripting add the "using Emotiv;" statement.
+Done, you can write code using the Emotiv library.
+
+
 Follow this steps.
 
 Now there is no error but fix the message box at bottom. 
