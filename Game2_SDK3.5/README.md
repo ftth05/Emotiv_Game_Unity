@@ -1,1 +1,0 @@
-This is for Game2 design based with Emotiv.
