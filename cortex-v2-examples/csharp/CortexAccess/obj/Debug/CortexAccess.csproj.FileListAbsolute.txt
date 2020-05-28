@@ -34,3 +34,15 @@ K:\GitHub\Emotiv_Game_Unity\cortex-v2-examples\csharp\CortexAccess\obj\Debug\Cor
 K:\GitHub\Emotiv_Game_Unity\cortex-v2-examples\csharp\CortexAccess\obj\Debug\CortexAccess.csproj.CopyComplete
 K:\GitHub\Emotiv_Game_Unity\cortex-v2-examples\csharp\CortexAccess\obj\Debug\CortexAccess.dll
 K:\GitHub\Emotiv_Game_Unity\cortex-v2-examples\csharp\CortexAccess\obj\Debug\CortexAccess.pdb
+C:\Users\F3tt4H\Documents\GitHub\cortex-v2-examples\csharp\CortexAccess\bin\Debug\CortexAccess.dll.config
+C:\Users\F3tt4H\Documents\GitHub\cortex-v2-examples\csharp\CortexAccess\bin\Debug\CortexAccess.dll
+C:\Users\F3tt4H\Documents\GitHub\cortex-v2-examples\csharp\CortexAccess\bin\Debug\CortexAccess.pdb
+C:\Users\F3tt4H\Documents\GitHub\cortex-v2-examples\csharp\CortexAccess\bin\Debug\Newtonsoft.Json.dll
+C:\Users\F3tt4H\Documents\GitHub\cortex-v2-examples\csharp\CortexAccess\bin\Debug\SuperSocket.ClientEngine.dll
+C:\Users\F3tt4H\Documents\GitHub\cortex-v2-examples\csharp\CortexAccess\bin\Debug\WebSocket4Net.dll
+C:\Users\F3tt4H\Documents\GitHub\cortex-v2-examples\csharp\CortexAccess\bin\Debug\Newtonsoft.Json.xml
+C:\Users\F3tt4H\Documents\GitHub\cortex-v2-examples\csharp\CortexAccess\obj\Debug\CortexAccess.csprojAssemblyReference.cache
+C:\Users\F3tt4H\Documents\GitHub\cortex-v2-examples\csharp\CortexAccess\obj\Debug\CortexAccess.csproj.CoreCompileInputs.cache
+C:\Users\F3tt4H\Documents\GitHub\cortex-v2-examples\csharp\CortexAccess\obj\Debug\CortexAccess.csproj.CopyComplete
+C:\Users\F3tt4H\Documents\GitHub\cortex-v2-examples\csharp\CortexAccess\obj\Debug\CortexAccess.dll
+C:\Users\F3tt4H\Documents\GitHub\cortex-v2-examples\csharp\CortexAccess\obj\Debug\CortexAccess.pdb
